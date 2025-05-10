@@ -1,0 +1,421 @@
+
+{
+  "courses": [
+    {
+      "id": "fluid-mechanics",
+      "title": "Mecânica dos Fluidos",
+      "description": "Estudo do comportamento dos líquidos e gases em repouso e em movimento",
+      "icon": "droplet",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "color": "engineer",
+      "disciplines": [
+        {
+          "id": "basic-concepts",
+          "title": "Conceitos Básicos",
+          "description": "Fundamentos essenciais para compreensão da mecânica dos fluidos",
+          "topics": [
+            {
+              "id": "fluid-properties",
+              "title": "Propriedades dos Fluidos",
+              "summary": "Densidade, viscosidade, pressão e tensão superficial são as propriedades fundamentais dos fluidos que determinam seu comportamento.",
+              "tips": [
+                "A densidade (ρ) é a massa por unidade de volume e é medida em kg/m³",
+                "A viscosidade é a resistência do fluido ao escoamento - quanto maior a viscosidade, mais difícil o escoamento",
+                "Lembre-se que a viscosidade dos líquidos diminui com o aumento da temperatura, enquanto a dos gases aumenta"
+              ],
+              "warnings": [
+                "Não confunda viscosidade dinâmica (μ) com viscosidade cinemática (ν). A relação é ν = μ/ρ"
+              ],
+              "questions": [
+                {
+                  "question": "Qual é a unidade de medida da viscosidade dinâmica?",
+                  "options": ["Pa·s", "kg/m³", "m/s", "N/m²"],
+                  "correctAnswer": 0,
+                  "explanation": "A viscosidade dinâmica é medida em Pascal-segundo (Pa·s) ou em poise (P)"
+                },
+                {
+                  "question": "O que acontece com a viscosidade de um líquido quando a temperatura aumenta?",
+                  "options": ["Aumenta", "Diminui", "Permanece constante", "Oscila aleatoriamente"],
+                  "correctAnswer": 1,
+                  "explanation": "A viscosidade dos líquidos diminui com o aumento da temperatura, pois as moléculas adquirem mais energia cinética"
+                }
+              ]
+            },
+            {
+              "id": "hydrostatics",
+              "title": "Hidrostática",
+              "summary": "Estudo dos fluidos em repouso, incluindo pressão hidrostática e princípios de flutuação.",
+              "tips": [
+                "A pressão em um ponto em um fluido depende apenas da profundidade e da densidade do fluido: p = ρgh",
+                "O princípio de Pascal afirma que a pressão aplicada a um fluido confinado é transmitida igualmente em todas as direções",
+                "O princípio de Arquimedes estabelece que um corpo imerso em um fluido sofre uma força de empuxo igual ao peso do fluido deslocado"
+              ],
+              "warnings": [
+                "Cuidado com as unidades! Pressão é medida em Pascal (N/m²)"
+              ],
+              "questions": [
+                {
+                  "question": "Qual dos seguintes NÃO é um princípio da hidrostática?",
+                  "options": ["Princípio de Pascal", "Princípio de Arquimedes", "Princípio de Bernoulli", "Lei de Stevin"],
+                  "correctAnswer": 2,
+                  "explanation": "O princípio de Bernoulli se aplica a fluidos em movimento, não a fluidos em repouso"
+                },
+                {
+                  "question": "Um cubo de madeira flutua na água com 75% do seu volume submerso. Qual é a densidade da madeira em relação à densidade da água?",
+                  "options": ["0.25", "0.75", "1.25", "1.75"],
+                  "correctAnswer": 1,
+                  "explanation": "Pela Lei de Arquimedes, a relação entre as densidades é igual à fração do volume submerso"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fluid-dynamics",
+          "title": "Dinâmica dos Fluidos",
+          "description": "Análise do movimento e comportamento dos fluidos",
+          "topics": [
+            {
+              "id": "flow-types",
+              "title": "Tipos de Escoamento",
+              "summary": "Os escoamentos podem ser classificados como laminares ou turbulentos, incompressíveis ou compressíveis, permanentes ou não-permanentes.",
+              "tips": [
+                "O número de Reynolds (Re) determina se um escoamento é laminar ou turbulento. Re < 2300 geralmente indica escoamento laminar",
+                "Em escoamentos incompressíveis, a densidade do fluido é considerada constante (comum para líquidos)",
+                "Escoamento permanente significa que as propriedades do fluido não variam com o tempo em um ponto fixo"
+              ],
+              "warnings": [
+                "Mesmo um fluido incompressível pode ter escoamento não-permanente se as condições mudarem com o tempo"
+              ],
+              "questions": [
+                {
+                  "question": "O que determina se um escoamento é laminar ou turbulento?",
+                  "options": ["Número de Reynolds", "Número de Mach", "Número de Froude", "Número de Weber"],
+                  "correctAnswer": 0,
+                  "explanation": "O número de Reynolds (Re) é o parâmetro adimensional que determina o regime de escoamento"
+                },
+                {
+                  "question": "Um escoamento com Re = 5000 é considerado:",
+                  "options": ["Laminar", "Turbulento", "Transicional", "Supersônico"],
+                  "correctAnswer": 1,
+                  "explanation": "Como Re > 4000, o escoamento é considerado turbulento"
+                }
+              ]
+            },
+            {
+              "id": "bernoulli-equation",
+              "title": "Equação de Bernoulli",
+              "summary": "A equação de Bernoulli expressa a conservação de energia em um fluido ideal em movimento.",
+              "tips": [
+                "A equação de Bernoulli é: p + ρgh + ½ρv² = constante",
+                "Ela relaciona pressão (p), altura (h) e velocidade (v) ao longo de uma linha de corrente",
+                "Use-a para resolver problemas de variação de velocidade e pressão em tubulações e escoamentos"
+              ],
+              "warnings": [
+                "A equação só é válida para escoamentos: sem atrito, incompressíveis, em regime permanente e ao longo de uma linha de corrente"
+              ],
+              "questions": [
+                {
+                  "question": "Se a velocidade do fluido aumenta em uma contração de tubulação, o que acontece com a pressão (considerando altura constante)?",
+                  "options": ["Aumenta", "Diminui", "Permanece igual", "Não é possível determinar"],
+                  "correctAnswer": 1,
+                  "explanation": "Pela equação de Bernoulli, se a velocidade aumenta, a pressão deve diminuir para manter a energia constante (considerando altura constante)"
+                },
+                {
+                  "question": "Qual termo na equação de Bernoulli representa a energia potencial por unidade de volume?",
+                  "options": ["p", "ρgh", "½ρv²", "nenhuma das anteriores"],
+                  "correctAnswer": 1,
+                  "explanation": "O termo ρgh representa a energia potencial gravitacional por unidade de volume"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thermodynamics",
+      "title": "Termodinâmica",
+      "description": "Estudo da energia térmica, calor e trabalho, e suas conversões",
+      "icon": "flame",
+      "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b",
+      "color": "mechanic",
+      "disciplines": [
+        {
+          "id": "thermodynamic-laws",
+          "title": "Leis da Termodinâmica",
+          "description": "Princípios fundamentais que regem as transformações de energia",
+          "topics": [
+            {
+              "id": "first-law",
+              "title": "Primeira Lei da Termodinâmica",
+              "summary": "A primeira lei é a lei da conservação da energia aplicada a sistemas termodinâmicos.",
+              "tips": [
+                "ΔU = Q - W: a variação da energia interna é igual ao calor recebido menos o trabalho realizado pelo sistema",
+                "Para um ciclo completo: ∮ dU = 0, ou seja, ∮ δQ = ∮ δW",
+                "Para processos isocóricos (volume constante): ΔU = Q (não há trabalho)"
+              ],
+              "warnings": [
+                "Cuidado com o sinal do trabalho! Quando o sistema realiza trabalho sobre a vizinhança, W é positivo"
+              ],
+              "questions": [
+                {
+                  "question": "Em um processo adiabático, qual é a relação entre variação de energia interna e trabalho?",
+                  "options": ["ΔU = W", "ΔU = -W", "ΔU = 0", "W = 0"],
+                  "correctAnswer": 1,
+                  "explanation": "Em um processo adiabático, não há transferência de calor (Q = 0), então ΔU = -W"
+                },
+                {
+                  "question": "Se um gás ideal realiza um trabalho de 500 J e perde 300 J de calor para o ambiente, qual é a variação da sua energia interna?",
+                  "options": ["200 J", "800 J", "-800 J", "-200 J"],
+                  "correctAnswer": 3,
+                  "explanation": "Usando ΔU = Q - W = -300 - 500 = -800 J"
+                }
+              ]
+            },
+            {
+              "id": "second-law",
+              "title": "Segunda Lei da Termodinâmica",
+              "summary": "A segunda lei estabelece a direção em que os processos termodinâmicos podem ocorrer e introduz o conceito de entropia.",
+              "tips": [
+                "É impossível construir uma máquina térmica com eficiência de 100% (Enunciado de Kelvin-Planck)",
+                "O calor não flui espontaneamente de um corpo frio para um quente (Enunciado de Clausius)",
+                "A entropia do universo sempre aumenta em processos irreversíveis"
+              ],
+              "warnings": [
+                "A segunda lei não contradiz a primeira lei! Ambas são sempre válidas"
+              ],
+              "questions": [
+                {
+                  "question": "Qual é a eficiência máxima teórica de uma máquina térmica operando entre 400 K e 300 K?",
+                  "options": ["25%", "33%", "75%", "100%"],
+                  "correctAnswer": 0,
+                  "explanation": "A eficiência máxima (Carnot) é η = 1 - Tf/Tq = 1 - 300/400 = 0.25 = 25%"
+                },
+                {
+                  "question": "Em qual processo a entropia de um sistema isolado permanece constante?",
+                  "options": ["Irreversível", "Reversível", "Adiabático", "Isotérmico"],
+                  "correctAnswer": 1,
+                  "explanation": "A entropia permanece constante apenas em processos reversíveis em sistemas isolados"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "thermodynamic-cycles",
+          "title": "Ciclos Termodinâmicos",
+          "description": "Processos cíclicos usados em máquinas térmicas e refrigeração",
+          "topics": [
+            {
+              "id": "carnot-cycle",
+              "title": "Ciclo de Carnot",
+              "summary": "O ciclo de Carnot é o ciclo termodinâmico ideal que apresenta a maior eficiência possível entre duas temperaturas.",
+              "tips": [
+                "Consiste em 4 processos: 2 isotérmicos e 2 adiabáticos",
+                "A eficiência é dada por η = 1 - Tf/Tq",
+                "Nenhum ciclo real pode ter eficiência maior que o ciclo de Carnot operando entre as mesmas temperaturas"
+              ],
+              "warnings": [
+                "O ciclo de Carnot é uma idealização teórica! Na prática, nenhuma máquina térmica pode alcançar exatamente essa eficiência"
+              ],
+              "questions": [
+                {
+                  "question": "Quais processos compõem o ciclo de Carnot?",
+                  "options": [
+                    "Isotérmico, isobárico, isotérmico, isobárico",
+                    "Isotérmico, adiabático, isotérmico, adiabático",
+                    "Isobárico, isocórico, isobárico, isocórico",
+                    "Adiabático, isocórico, adiabático, isocórico"
+                  ],
+                  "correctAnswer": 1,
+                  "explanation": "O ciclo de Carnot consiste em expansão isotérmica, expansão adiabática, compressão isotérmica e compressão adiabática"
+                },
+                {
+                  "question": "O que acontece com a eficiência do ciclo de Carnot se a temperatura da fonte quente aumentar?",
+                  "options": ["Diminui", "Aumenta", "Permanece constante", "Torna-se zero"],
+                  "correctAnswer": 1,
+                  "explanation": "Se Tq aumenta (com Tf constante), então η = 1 - Tf/Tq aumenta"
+                }
+              ]
+            },
+            {
+              "id": "otto-cycle",
+              "title": "Ciclo Otto",
+              "summary": "O ciclo Otto é o ciclo termodinâmico que descreve o funcionamento dos motores de combustão interna com ignição por centelha.",
+              "tips": [
+                "Consiste em 4 processos: compressão adiabática, adição de calor a volume constante, expansão adiabática e rejeição de calor a volume constante",
+                "A eficiência depende da taxa de compressão: η = 1 - 1/rᵏ⁻¹, onde r é a taxa de compressão e k é o coeficiente adiabático",
+                "Quanto maior a taxa de compressão, maior a eficiência (limitada por detonação do combustível)"
+              ],
+              "warnings": [
+                "Não confunda o ciclo Otto (ignição por centelha) com o ciclo Diesel (ignição por compressão)"
+              ],
+              "questions": [
+                {
+                  "question": "Em que tipo de motor é aplicado o ciclo Otto?",
+                  "options": [
+                    "Motores a vapor",
+                    "Motores de ignição por centelha (gasolina)",
+                    "Motores de ignição por compressão (diesel)",
+                    "Turbinas a gás"
+                  ],
+                  "correctAnswer": 1,
+                  "explanation": "O ciclo Otto descreve o funcionamento de motores de combustão interna com ignição por centelha, como os motores a gasolina"
+                },
+                {
+                  "question": "O que acontece com a eficiência do ciclo Otto quando a taxa de compressão aumenta?",
+                  "options": ["Diminui", "Aumenta", "Permanece constante", "Oscila"],
+                  "correctAnswer": 1,
+                  "explanation": "A eficiência do ciclo Otto aumenta com o aumento da taxa de compressão, conforme a fórmula η = 1 - 1/rᵏ⁻¹"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "materials-strength",
+      "title": "Resistência dos Materiais",
+      "description": "Análise do comportamento de sólidos submetidos a cargas",
+      "icon": "settings",
+      "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      "color": "engineer",
+      "disciplines": [
+        {
+          "id": "stress-strain",
+          "title": "Tensão e Deformação",
+          "description": "Conceitos fundamentais sobre o comportamento mecânico dos materiais",
+          "topics": [
+            {
+              "id": "mechanical-properties",
+              "title": "Propriedades Mecânicas",
+              "summary": "As propriedades mecânicas definem como os materiais respondem a forças aplicadas e deformações.",
+              "tips": [
+                "Tensão (σ) = Força/Área, medida em Pascal (Pa) ou N/m²",
+                "Deformação (ε) = Variação do comprimento/Comprimento original (adimensional)",
+                "Lei de Hooke: σ = E.ε, onde E é o módulo de elasticidade ou módulo de Young"
+              ],
+              "warnings": [
+                "A Lei de Hooke só é válida na região elástica do material, antes do limite de proporcionalidade"
+              ],
+              "questions": [
+                {
+                  "question": "Qual é a unidade de medida do módulo de elasticidade?",
+                  "options": ["N/m²", "N·m", "m/s²", "kg/m³"],
+                  "correctAnswer": 0,
+                  "explanation": "O módulo de elasticidade é medido em Pascal (Pa) ou N/m², assim como a tensão"
+                },
+                {
+                  "question": "Uma barra de aço com área de seção transversal de 10 cm² está sujeita a uma força de tração de 50 kN. Qual é a tensão na barra?",
+                  "options": ["5 MPa", "50 MPa", "500 MPa", "5000 MPa"],
+                  "correctAnswer": 1,
+                  "explanation": "Tensão = Força/Área = 50.000 N / (10×10⁻⁴ m²) = 50×10⁶ Pa = 50 MPa"
+                }
+              ]
+            },
+            {
+              "id": "beam-bending",
+              "title": "Flexão de Vigas",
+              "summary": "A flexão é a deformação que ocorre quando uma viga é submetida a cargas transversais.",
+              "tips": [
+                "A equação da linha elástica da viga é dada por EI(d²y/dx²) = M(x)",
+                "O momento fletor máximo geralmente ocorre onde o esforço cortante é zero",
+                "A tensão normal máxima devido à flexão é σ = M.c/I, onde M é o momento fletor, c é a distância do eixo neutro à fibra mais afastada, e I é o momento de inércia"
+              ],
+              "warnings": [
+                "Cuidado com as convenções de sinal para momento fletor e esforço cortante"
+              ],
+              "questions": [
+                {
+                  "question": "Para uma viga simplesmente apoiada com carga concentrada P no meio do vão L, qual é o valor do momento fletor máximo?",
+                  "options": ["PL/2", "PL/4", "PL/8", "PL"],
+                  "correctAnswer": 1,
+                  "explanation": "O momento fletor máximo ocorre no meio do vão e é dado por M = PL/4"
+                },
+                {
+                  "question": "O que acontece com a deflexão máxima de uma viga quando seu comprimento é duplicado (mantendo-se as outras condições constantes)?",
+                  "options": ["Dobra", "Quadruplica", "Aumenta 8 vezes", "Aumenta 16 vezes"],
+                  "correctAnswer": 2,
+                  "explanation": "A deflexão é proporcional ao cubo do comprimento (L³), então ao dobrar o comprimento, a deflexão aumenta 2³ = 8 vezes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "failure-analysis",
+          "title": "Análise de Falhas",
+          "description": "Estudo dos mecanismos de falha e critérios de projeto",
+          "topics": [
+            {
+              "id": "failure-theories",
+              "title": "Teorias de Falha",
+              "summary": "As teorias de falha são critérios usados para prever quando um material falha sob carregamentos complexos.",
+              "tips": [
+                "Teoria da Tensão Normal Máxima: usada para materiais frágeis",
+                "Teoria da Energia de Distorção (von Mises): melhor para materiais dúcteis",
+                "Teoria da Tensão Cisalhante Máxima (Tresca): mais conservadora que von Mises"
+              ],
+              "warnings": [
+                "Cada teoria de falha é mais adequada para certos tipos de materiais e carregamentos"
+              ],
+              "questions": [
+                {
+                  "question": "Qual teoria de falha é mais adequada para prever a falha em materiais dúcteis?",
+                  "options": ["Teoria da Tensão Normal Máxima", "Teoria de Mohr-Coulomb", "Teoria de von Mises", "Teoria da Deformação Máxima"],
+                  "correctAnswer": 2,
+                  "explanation": "A teoria de von Mises (Energia de Distorção) é mais adequada para prever falhas em materiais dúcteis, como a maioria dos metais"
+                },
+                {
+                  "question": "Segundo o critério de von Mises, um material falha quando:",
+                  "options": [
+                    "A tensão principal máxima excede a resistência do material",
+                    "A energia de deformação por unidade de volume excede um valor crítico",
+                    "A tensão cisalhante máxima excede metade da resistência ao escoamento",
+                    "A tensão equivalente excede a tensão de escoamento do material"
+                  ],
+                  "correctAnswer": 3,
+                  "explanation": "Segundo von Mises, a falha ocorre quando a tensão equivalente (σeq) atinge a tensão de escoamento do material no ensaio de tração uniaxial"
+                }
+              ]
+            },
+            {
+              "id": "fatigue",
+              "title": "Fadiga",
+              "summary": "A fadiga é o fenômeno de falha progressiva que ocorre quando um material é submetido a carregamentos cíclicos.",
+              "tips": [
+                "O limite de fadiga é a tensão abaixo da qual o material pode suportar um número infinito de ciclos",
+                "A curva S-N (Tensão vs. Número de ciclos) é usada para prever a vida em fadiga",
+                "Concentradores de tensão, como entalhes e furos, reduzem drasticamente a resistência à fadiga"
+              ],
+              "warnings": [
+                "Mais de 90% das falhas mecânicas são causadas por fadiga, não por sobrecarga estática"
+              ],
+              "questions": [
+                {
+                  "question": "O que é o limite de fadiga de um material?",
+                  "options": [
+                    "A tensão máxima que o material pode suportar antes de romper",
+                    "A tensão acima da qual ocorre deformação plástica",
+                    "A tensão abaixo da qual o material pode suportar um número infinito de ciclos",
+                    "A tensão que causa ruptura após 10³ ciclos"
+                  ],
+                  "correctAnswer": 2,
+                  "explanation": "O limite de fadiga é a tensão abaixo da qual o material pode, teoricamente, suportar um número infinito de ciclos sem falhar"
+                },
+                {
+                  "question": "Qual fator tem maior influência na redução da vida em fadiga de um componente?",
+                  "options": ["Temperatura ambiente", "Rugosidade superficial", "Concentradores de tensão", "Tratamento térmico"],
+                  "correctAnswer": 2,
+                  "explanation": "Concentradores de tensão, como entalhes, furos e cantos vivos, podem reduzir drasticamente a resistência à fadiga de um componente"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
