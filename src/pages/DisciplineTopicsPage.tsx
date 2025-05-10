@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Progress } from "@/components/ui/progress";
-import { ArrowRight, Book, Home } from "lucide-react";
+import { ArrowRight, Home } from "lucide-react";
 
 interface Course {
   id: string;
@@ -130,12 +130,14 @@ const DisciplineTopicsPage = () => {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to={`/courses/${courseId}`}>{course.title}</Link>
+                <Link to={`/courses/${courseId}`}>{course?.title}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink isCurrentPage>{discipline.title}</BreadcrumbLink>
+              <BreadcrumbLink isCurrentPage>
+                {discipline?.title}
+              </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -143,8 +145,8 @@ const DisciplineTopicsPage = () => {
         <div className="mb-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className={`text-3xl font-bold text-${course.color}-700`}>{discipline.title}</h1>
-              <p className="text-muted-foreground mt-2">{discipline.description}</p>
+              <h1 className={`text-3xl font-bold text-${course?.color}-700`}>{discipline?.title}</h1>
+              <p className="text-muted-foreground mt-2">{discipline?.description}</p>
             </div>
             <div className="shrink-0">
               <Button asChild variant="outline">
@@ -160,17 +162,21 @@ const DisciplineTopicsPage = () => {
               <span>Progresso geral</span>
               <span>{overallProgress}%</span>
             </div>
-            <Progress value={overallProgress} className={`h-2 bg-${course.color}-100`} indicatorClassName={`bg-${course.color}-600`} />
+            <Progress 
+              value={overallProgress} 
+              className={`h-2 bg-${course?.color}-100`} 
+              indicatorClassName={`bg-${course?.color}-600`} 
+            />
           </div>
         </div>
 
         <div className="grid gap-4">
-          {discipline.topics.map((topic, index) => (
+          {discipline?.topics.map((topic, index) => (
             <Card key={topic.id}>
               <CardHeader>
                 <div className="flex justify-between items-center">
-                  <CardTitle className="flex items-center gap-2">
-                    <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full bg-${course.color}-100 text-${course.color}-700 text-xs font-bold`}>
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full bg-${course?.color}-100 text-${course?.color}-700 text-xs font-bold`}>
                       {index + 1}
                     </span>
                     <span>{topic.title}</span>
@@ -184,14 +190,14 @@ const DisciplineTopicsPage = () => {
                 <p className="text-muted-foreground line-clamp-2">{topic.summary}</p>
                 <Progress 
                   value={topicProgress[topic.id] || 0} 
-                  className={`h-1 mt-4 bg-${course.color}-100`} 
-                  indicatorClassName={`bg-${course.color}-600`} 
+                  className={`h-1 mt-4 bg-${course?.color}-100`} 
+                  indicatorClassName={`bg-${course?.color}-600`} 
                 />
               </CardContent>
               <CardFooter className="flex justify-end">
                 <Button
                   asChild
-                  className={`bg-${course.color}-600 hover:bg-${course.color}-700 flex items-center gap-2`}
+                  className={`bg-${course?.color}-600 hover:bg-${course?.color}-700 flex items-center gap-2`}
                   size="sm"
                 >
                   <Link to={`/courses/${courseId}/${disciplineId}/${topic.id}`}>

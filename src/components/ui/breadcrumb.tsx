@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { ChevronRight, MoreHorizontal } from "lucide-react"
@@ -39,18 +40,26 @@ const BreadcrumbItem = React.forwardRef<
 ))
 BreadcrumbItem.displayName = "BreadcrumbItem"
 
+interface BreadcrumbLinkProps extends React.ComponentPropsWithoutRef<"a"> {
+  asChild?: boolean;
+  isCurrentPage?: boolean;
+}
+
 const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
-  React.ComponentPropsWithoutRef<"a"> & {
-    asChild?: boolean
-  }
->(({ asChild, className, ...props }, ref) => {
+  BreadcrumbLinkProps
+>(({ asChild, className, isCurrentPage, ...props }, ref) => {
   const Comp = asChild ? Slot : "a"
 
   return (
     <Comp
       ref={ref}
-      className={cn("transition-colors hover:text-foreground", className)}
+      className={cn(
+        "transition-colors hover:text-foreground", 
+        isCurrentPage && "font-medium text-foreground",
+        className
+      )}
+      aria-current={isCurrentPage ? "page" : undefined}
       {...props}
     />
   )

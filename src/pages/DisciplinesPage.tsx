@@ -111,7 +111,9 @@ const DisciplinesPage = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink isCurrentPage>{course.title}</BreadcrumbLink>
+              <BreadcrumbLink isCurrentPage>
+                {course?.title}
+              </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -119,8 +121,8 @@ const DisciplinesPage = () => {
         <div className="mb-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className={`text-3xl font-bold text-${course.color}-700`}>{course.title}</h1>
-              <p className="text-muted-foreground mt-2">{course.description}</p>
+              <h1 className={`text-3xl font-bold text-${course?.color}-700`}>{course?.title}</h1>
+              <p className="text-muted-foreground mt-2">{course?.description}</p>
             </div>
             <div className="shrink-0">
               <Button asChild variant="outline">
@@ -133,29 +135,34 @@ const DisciplinesPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {course.disciplines.map((discipline) => (
+          {course?.disciplines.map((discipline) => (
             <Card key={discipline.id} className="card-hover">
               <CardHeader>
                 <CardTitle>{discipline.title}</CardTitle>
-                <CardDescription>{discipline.description}</CardDescription>
+                <CardDescription className="line-clamp-2">{discipline.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm font-medium mb-2">Tópicos incluídos:</p>
                 <ul className="space-y-1 ml-1">
-                  {discipline.topics.map((topic) => (
+                  {discipline.topics.slice(0, 3).map((topic) => (
                     <li key={topic.id} className="flex items-start text-sm gap-2">
-                      <Book className={`h-4 w-4 mt-1 shrink-0 text-${course.color}-600`} />
-                      <span>{topic.title}</span>
+                      <Book className={`h-4 w-4 mt-1 shrink-0 text-${course?.color}-600`} />
+                      <span className="line-clamp-1">{topic.title}</span>
                     </li>
                   ))}
+                  {discipline.topics.length > 3 && (
+                    <li className="text-sm text-muted-foreground">
+                      + {discipline.topics.length - 3} mais tópicos
+                    </li>
+                  )}
                 </ul>
               </CardContent>
               <CardFooter>
                 <Link
                   to={`/courses/${courseId}/${discipline.id}`}
-                  className={`w-full bg-${course.color}-600 hover:bg-${course.color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`}
+                  className={`w-full bg-${course?.color}-600 hover:bg-${course?.color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`}
                 >
-                  <span>Estudar agora</span>
+                  <span>Ver Disciplina</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </CardFooter>
