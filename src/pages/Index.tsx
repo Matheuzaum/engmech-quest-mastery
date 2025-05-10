@@ -21,7 +21,7 @@ const Index = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild className="bg-engineer-600 hover:bg-engineer-700">
-                <Link to="/courses">Ver Cursos</Link>
+                <Link to="/login">Entrar na Plataforma</Link>
               </Button>
               <Button asChild variant="outline">
                 <Link to="#">Como Funciona</Link>

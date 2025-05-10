@@ -1,5 +1,5 @@
 
-import { Book, Home, Menu } from "lucide-react";
+import { Book, Home, LogIn, Menu } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -28,8 +28,11 @@ const Header = () => {
             <Book className="h-4 w-4" />
             <span>Cursos</span>
           </Link>
-          <Button variant="default" className="bg-engineer-600 hover:bg-engineer-700">
-            Começar Agora
+          <Button variant="default" className="bg-engineer-600 hover:bg-engineer-700" asChild>
+            <Link to="/login">
+              <LogIn className="h-4 w-4 mr-1" />
+              Entrar
+            </Link>
           </Button>
         </nav>
 
@@ -63,8 +66,12 @@ const Header = () => {
                 variant="default" 
                 className="mt-2 bg-engineer-600 hover:bg-engineer-700"
                 onClick={() => setIsOpen(false)}
+                asChild
               >
-                Começar Agora
+                <Link to="/login">
+                  <LogIn className="h-5 w-5 mr-1" />
+                  Entrar
+                </Link>
               </Button>
             </div>
           </SheetContent>
