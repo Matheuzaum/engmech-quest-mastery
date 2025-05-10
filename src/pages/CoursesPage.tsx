@@ -6,21 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-
-interface Course {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  image: string;
-  color: string;
-  disciplines: {
-    id: string;
-    title: string;
-    description: string;
-    topics: any[];
-  }[];
-}
+import { Course } from "@/types/course";
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -62,6 +48,11 @@ const CoursesPage = () => {
     return course.disciplines.reduce((acc, discipline) => {
       return acc + discipline.topics.length;
     }, 0);
+  };
+
+  // Function to get button class based on course color
+  const getButtonClass = (color: string) => {
+    return `w-full bg-${color}-600 hover:bg-${color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`;
   };
 
   return (
@@ -177,7 +168,7 @@ const CoursesPage = () => {
                       <CardFooter>
                         <Link
                           to={`/courses/${course.id}`}
-                          className={`w-full bg-${course.color}-600 hover:bg-${course.color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`}
+                          className={getButtonClass(course.color)}
                         >
                           <span>Ver disciplinas</span>
                           <ArrowRight className="h-4 w-4" />

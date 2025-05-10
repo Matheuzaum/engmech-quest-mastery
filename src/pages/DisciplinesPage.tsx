@@ -6,39 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { ArrowRight, Book, Home } from "lucide-react";
-
-interface Course {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  image: string;
-  color: string;
-  disciplines: Discipline[];
-}
-
-interface Discipline {
-  id: string;
-  title: string;
-  description: string;
-  topics: Topic[];
-}
-
-interface Topic {
-  id: string;
-  title: string;
-  summary: string;
-  tips: string[];
-  warnings: string[];
-  questions: Question[];
-}
-
-interface Question {
-  question: string;
-  options: string[];
-  correctAnswer: number;
-  explanation: string;
-}
+import { Course, Discipline, Topic } from "@/types/course";
 
 const DisciplinesPage = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -61,6 +29,11 @@ const DisciplinesPage = () => {
 
     fetchCourse();
   }, [courseId]);
+
+  // Function to get button class based on course color
+  const getButtonClass = (color: string) => {
+    return `w-full bg-${color}-600 hover:bg-${color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`;
+  };
 
   if (loading) {
     return (
@@ -160,7 +133,7 @@ const DisciplinesPage = () => {
               <CardFooter>
                 <Link
                   to={`/courses/${courseId}/${discipline.id}`}
-                  className={`w-full bg-${course?.color}-600 hover:bg-${course?.color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`}
+                  className={getButtonClass(course.color)}
                 >
                   <span>Ver Disciplina</span>
                   <ArrowRight className="h-4 w-4" />
