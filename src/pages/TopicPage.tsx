@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import MainLayout from "@/components/Layout/MainLayout";
@@ -134,7 +133,7 @@ const TopicPage = () => {
     return (
       <MainLayout>
         <div className="container py-20 flex justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-engineer-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
         </div>
       </MainLayout>
     );
@@ -197,7 +196,7 @@ const TopicPage = () => {
         </Breadcrumb>
 
         <div className="mb-6">
-          <h1 className={`text-3xl font-bold text-${course.color}-700`}>{topic.title}</h1>
+          <h1 className="text-3xl font-bold text-primary">{topic.title}</h1>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-6">
@@ -216,17 +215,17 @@ const TopicPage = () => {
           </TabsContent>
           <TabsContent value="dicas" className="mt-6">
             <div className="grid gap-6">
-              <Card className={`border-${course.color}-200 bg-${course.color}-50/50`}>
+              <Card className="border-primary/20 bg-primary/5">
                 <div className="p-6">
                   <div className="flex flex-col space-y-4">
                     <h3 className="text-xl font-bold flex items-center gap-2">
-                      <Check className={`h-5 w-5 text-${course.color}-600`} />
+                      <Check className="h-5 w-5 text-primary" />
                       Dicas e Macetes
                     </h3>
                     <ul className="space-y-2">
                       {topic.tips.map((tip, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <span className={`inline-flex items-center justify-center w-5 h-5 rounded-full bg-${course.color}-600 text-white text-xs font-medium shrink-0 mt-0.5`}>
+                          <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white text-xs font-medium shrink-0 mt-0.5">
                             {index + 1}
                           </span>
                           <span>{tip}</span>
@@ -258,38 +257,28 @@ const TopicPage = () => {
             </div>
           </TabsContent>
           <TabsContent value="quiz" className="mt-6">
-            <QuizComponent questions={topic.questions} color={course.color} />
+            <QuizComponent questions={topic.questions} />
           </TabsContent>
         </Tabs>
 
         <div className="flex justify-between mt-8">
-          {prevTopic ? (
-            <Button asChild variant="outline" className="flex items-center gap-2">
-              <Link to={`/courses/${courseId}/${prevTopic.disciplineId}/${prevTopic.topicId}`}>
-                <ArrowLeft className="h-4 w-4" />
-                <span>Tópico anterior</span>
-              </Link>
-            </Button>
-          ) : (
-            <div></div>
-          )}
-          
-          {nextTopic ? (
-            <Button
-              asChild
-              className={`bg-${course.color}-600 hover:bg-${course.color}-700 flex items-center gap-2`}
+          {prevTopic && (
+            <Link
+              to={`/courses/${courseId}/${prevTopic.disciplineId}/${prevTopic.topicId}`}
+              className="inline-flex items-center gap-2 text-primary hover:underline"
             >
-              <Link to={`/courses/${courseId}/${nextTopic.disciplineId}/${nextTopic.topicId}`}>
-                <span>Próximo tópico</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          ) : (
-            <Button asChild className={`bg-${course.color}-600 hover:bg-${course.color}-700`}>
-              <Link to={`/courses/${courseId}`}>
-                <span>Concluir</span>
-              </Link>
-            </Button>
+              <ArrowLeft className="h-4 w-4" />
+              Tópico anterior
+            </Link>
+          )}
+          {nextTopic && (
+            <Link
+              to={`/courses/${courseId}/${nextTopic.disciplineId}/${nextTopic.topicId}`}
+              className="inline-flex items-center gap-2 text-primary hover:underline"
+            >
+              Próximo tópico
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           )}
         </div>
       </div>

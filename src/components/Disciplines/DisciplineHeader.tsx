@@ -1,13 +1,10 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import DisciplineProgress from "./DisciplineProgress";
 
 interface DisciplineHeaderProps {
   title: string;
   description: string;
   courseId: string;
-  progress: number;
   color?: string;
 }
 
@@ -15,7 +12,6 @@ const DisciplineHeader = ({
   title, 
   description, 
   courseId, 
-  progress, 
   color 
 }: DisciplineHeaderProps) => {
   return (
@@ -33,8 +29,6 @@ const DisciplineHeader = ({
           </Button>
         </div>
       </div>
-      
-      <DisciplineProgress progress={progress} color={color} />
     </div>
   );
 };

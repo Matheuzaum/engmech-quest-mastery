@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import MainLayout from "@/components/Layout/MainLayout";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -50,11 +49,6 @@ const CoursesPage = () => {
     }, 0);
   };
 
-  // Function to get button class based on course color
-  const getButtonClass = (color: string) => {
-    return `w-full bg-${color}-600 hover:bg-${color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`;
-  };
-
   return (
     <MainLayout>
       <div className="container py-10">
@@ -79,7 +73,7 @@ const CoursesPage = () => {
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-engineer-600"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
             </div>
           ) : (
             <>
@@ -100,8 +94,8 @@ const CoursesPage = () => {
                       </div>
                       <CardHeader>
                         <div className="flex justify-between items-start">
-                          <h3 className={`text-xl font-bold text-${course.color}-700`}>{course.title}</h3>
-                          <Badge variant="outline" className={`bg-${course.color}-50 text-${course.color}-700 border-${course.color}-200`}>
+                          <h3 className="text-xl font-bold text-primary">{course.title}</h3>
+                          <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
                             {course.disciplines.length} disciplinas
                           </Badge>
                         </div>
@@ -122,7 +116,7 @@ const CoursesPage = () => {
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                className={`h-4 w-4 mr-2 text-${course.color}-600`}
+                                className="h-4 w-4 mr-2 text-primary"
                               >
                                 <path d="M20 6 9 17l-5-5" />
                               </svg>
@@ -139,7 +133,7 @@ const CoursesPage = () => {
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                className={`h-4 w-4 mr-2 text-${course.color}-600`}
+                                className="h-4 w-4 mr-2 text-primary"
                               >
                                 <path d="M20 6 9 17l-5-5" />
                               </svg>
@@ -156,7 +150,7 @@ const CoursesPage = () => {
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                className={`h-4 w-4 mr-2 text-${course.color}-600`}
+                                className="h-4 w-4 mr-2 text-primary"
                               >
                                 <path d="M20 6 9 17l-5-5" />
                               </svg>
@@ -168,7 +162,7 @@ const CoursesPage = () => {
                       <CardFooter>
                         <Link
                           to={`/courses/${course.id}`}
-                          className={getButtonClass(course.color)}
+                          className="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors"
                         >
                           <span>Ver disciplinas</span>
                           <ArrowRight className="h-4 w-4" />

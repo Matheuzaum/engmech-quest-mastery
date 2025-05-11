@@ -1,5 +1,4 @@
-
-import { Book, Home, LogIn, Menu } from "lucide-react";
+import { Home, LogIn, Menu } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -13,8 +12,8 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <Book className="h-6 w-6 text-engineer-700" />
-            <span className="text-xl font-heading font-bold">EngRápido</span>
+            <i className="fa-solid fa-graduation-cap text-2xl" style={{ color: '#3b82f6' }}></i>
+            <span className="text-xl font-heading font-bold text-primary">EngRápido</span>
           </Link>
         </div>
 
@@ -25,10 +24,10 @@ const Header = () => {
             <span>Início</span>
           </Link>
           <Link to="/courses" className="nav-link text-foreground/80 hover:text-foreground">
-            <Book className="h-4 w-4" />
+            <i className="fa-solid fa-graduation-cap text-lg" style={{ color: '#3b82f6' }}></i>
             <span>Cursos</span>
           </Link>
-          <Button variant="default" className="bg-engineer-600 hover:bg-engineer-700" asChild>
+          <Button variant="default" className="bg-primary hover:bg-primary/90" asChild>
             <Link to="/login">
               <LogIn className="h-4 w-4 mr-1" />
               Entrar
@@ -59,12 +58,12 @@ const Header = () => {
                 className="flex items-center gap-2 py-2 text-foreground" 
                 onClick={() => setIsOpen(false)}
               >
-                <Book className="h-5 w-5" />
+                <i className="fa-solid fa-graduation-cap text-lg" style={{ color: '#3b82f6' }}></i>
                 <span className="text-lg">Cursos</span>
               </Link>
               <Button 
                 variant="default" 
-                className="mt-2 bg-engineer-600 hover:bg-engineer-700"
+                className="mt-2 bg-primary hover:bg-primary/90"
                 onClick={() => setIsOpen(false)}
                 asChild
               >

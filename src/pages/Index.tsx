@@ -1,10 +1,17 @@
-
 import { ArrowRight, Book } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import MainLayout from "@/components/Layout/MainLayout";
+import content from "@/data/content.json";
 
 const Index = () => {
+  const scrollToComoFunciona = () => {
+    const element = document.getElementById('como-funciona');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <MainLayout>
       {/* Hero Section */}
@@ -12,7 +19,7 @@ const Index = () => {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-engineer-700 to-mechanic-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
                 Engenharia Mecânica Simplificada
               </h1>
               <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
@@ -20,11 +27,11 @@ const Index = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-engineer-600 hover:bg-engineer-700">
-                <Link to="/login">Entrar na Plataforma</Link>
+              <Button asChild className="bg-primary hover:bg-primary/90">
+                <Link to="/courses">Começar</Link>
               </Button>
-              <Button asChild variant="outline">
-                <Link to="#">Como Funciona</Link>
+              <Button asChild variant="outline" onClick={scrollToComoFunciona}>
+                <Link to="#como-funciona">Como Funciona</Link>
               </Button>
             </div>
           </div>
@@ -36,7 +43,7 @@ const Index = () => {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 md:grid-cols-3">
             <div className="content-section">
-              <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-engineer-100 text-engineer-700">
+              <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <Book className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold">Resumos Objetivos</h3>
@@ -45,7 +52,7 @@ const Index = () => {
               </p>
             </div>
             <div className="content-section">
-              <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-mechanic-100 text-mechanic-700">
+              <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -67,7 +74,7 @@ const Index = () => {
               </p>
             </div>
             <div className="content-section">
-              <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-engineer-100 text-engineer-700">
+              <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -100,73 +107,33 @@ const Index = () => {
             Acesso Rápido aos Cursos
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Link to="/courses/fluid-mechanics" className="group card-hover overflow-hidden rounded-lg border bg-card">
-              <div className="aspect-video w-full overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1518770660439-4636190af475"
-                  alt="Mecânica dos Fluidos"
-                  className="object-cover w-full h-full transition-all group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-engineer-700">Mecânica dos Fluidos</h3>
-                <p className="mt-2 text-muted-foreground">
-                  Estudo do comportamento dos líquidos e gases em repouso e em movimento
-                </p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="badge-progress bg-engineer-100 text-engineer-700">
-                    8 tópicos
-                  </span>
-                  <ArrowRight className="h-5 w-5 text-engineer-600 transition-transform group-hover:translate-x-1" />
+            {content.courses.map((course) => (
+              <Link key={course.id} to={`/courses/${course.id}`} className="group card-hover overflow-hidden rounded-lg border bg-card">
+                <div className="aspect-video w-full overflow-hidden">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="object-cover w-full h-full transition-all group-hover:scale-105"
+                  />
                 </div>
-              </div>
-            </Link>
-            <Link to="/courses/thermodynamics" className="group card-hover overflow-hidden rounded-lg border bg-card">
-              <div className="aspect-video w-full overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b"
-                  alt="Termodinâmica"
-                  className="object-cover w-full h-full transition-all group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-mechanic-700">Termodinâmica</h3>
-                <p className="mt-2 text-muted-foreground">
-                  Estudo da energia térmica, calor e trabalho, e suas conversões
-                </p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="badge-progress bg-mechanic-100 text-mechanic-700">
-                    6 tópicos
-                  </span>
-                  <ArrowRight className="h-5 w-5 text-mechanic-600 transition-transform group-hover:translate-x-1" />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-primary">{course.title}</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    {course.description}
+                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="badge-progress bg-primary/10 text-primary">
+                      {course.disciplines.length} disciplinas
+                    </span>
+                    <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1" />
+                  </div>
                 </div>
-              </div>
-            </Link>
-            <Link to="/courses/materials-strength" className="group card-hover overflow-hidden rounded-lg border bg-card">
-              <div className="aspect-video w-full overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                  alt="Resistência dos Materiais"
-                  className="object-cover w-full h-full transition-all group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-engineer-700">Resistência dos Materiais</h3>
-                <p className="mt-2 text-muted-foreground">
-                  Análise do comportamento de sólidos submetidos a cargas
-                </p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="badge-progress bg-engineer-100 text-engineer-700">
-                    7 tópicos
-                  </span>
-                  <ArrowRight className="h-5 w-5 text-engineer-600 transition-transform group-hover:translate-x-1" />
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
 
           <div className="mt-10 text-center">
-            <Button asChild size="lg" className="bg-engineer-600 hover:bg-engineer-700">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
               <Link to="/courses">
                 Ver Todos os Cursos
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -176,54 +143,81 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="bg-muted py-16">
+      {/* Como Funciona Section */}
+      <section id="como-funciona" className="py-16 bg-white">
         <div className="container px-4 md:px-6">
-          <h2 className="mb-8 text-3xl font-bold tracking-tight text-center">
-            O que nossos alunos dizem
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="content-section">
-              <p className="italic">
-                "Os resumos e dicas me ajudaram a passar em uma prova que eu estava tendo dificuldade. Recomendo para todos os estudantes de engenharia!"
-              </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-lg font-bold">
-                  M
-                </div>
-                <div>
-                  <p className="font-semibold">Marco Silva</p>
-                  <p className="text-sm text-muted-foreground">Estudante de Engenharia</p>
-                </div>
+          <h2 className="mb-8 text-3xl font-bold tracking-tight text-center">Como Funciona</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="content-section text-center">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
+                <Book className="h-8 w-8" />
               </div>
+              <h3 className="text-xl font-bold mb-2">Conteúdo Organizado</h3>
+              <p className="text-muted-foreground">Material estruturado de forma clara e objetiva</p>
             </div>
-            <div className="content-section">
-              <p className="italic">
-                "O formato gamificado torna o estudo muito mais divertido e eficiente. Consegui entender conceitos complexos em menos tempo."
-              </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-lg font-bold">
-                  C
-                </div>
-                <div>
-                  <p className="font-semibold">Carla Mendes</p>
-                  <p className="text-sm text-muted-foreground">Engenheira Mecânica</p>
-                </div>
+            <div className="content-section text-center">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-8 w-8"
+                >
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
               </div>
+              <h3 className="text-xl font-bold mb-2">Dicas Rápidas</h3>
+              <p className="text-muted-foreground">Macetes e truques para facilitar o aprendizado</p>
             </div>
-            <div className="content-section">
-              <p className="italic">
-                "As 'pegadinhas' me alertaram para erros que eu provavelmente cometeria nas provas. Fantástico!"
-              </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-lg font-bold">
-                  R
-                </div>
-                <div>
-                  <p className="font-semibold">Rafael Gomes</p>
-                  <p className="text-sm text-muted-foreground">Professor Universitário</p>
-                </div>
+            <div className="content-section text-center">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-8 w-8"
+                >
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
               </div>
+              <h3 className="text-xl font-bold mb-2">Gamificação</h3>
+              <p className="text-muted-foreground">Aprenda brincando com questões interativas</p>
+            </div>
+            <div className="content-section text-center">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-8 w-8"
+                >
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Pegadinhas</h3>
+              <p className="text-muted-foreground">Fique atento aos pontos mais confusos</p>
             </div>
           </div>
         </div>

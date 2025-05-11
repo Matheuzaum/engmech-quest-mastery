@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import MainLayout from "@/components/Layout/MainLayout";
@@ -9,13 +8,13 @@ import { useDisciplineData } from "@/hooks/useDisciplineData";
 
 const DisciplineTopicsPage = () => {
   const { courseId, disciplineId } = useParams<{ courseId: string; disciplineId: string }>();
-  const { course, discipline, topicProgress, loading, overallProgress } = useDisciplineData(courseId, disciplineId);
+  const { course, discipline, loading } = useDisciplineData(courseId, disciplineId);
 
   if (loading) {
     return (
       <MainLayout>
         <div className="container py-20 flex justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-engineer-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
         </div>
       </MainLayout>
     );
@@ -52,8 +51,6 @@ const DisciplineTopicsPage = () => {
           title={discipline.title}
           description={discipline.description}
           courseId={courseId || ''}
-          progress={overallProgress}
-          color={course.color}
         />
 
         <div className="grid gap-4">
@@ -63,9 +60,7 @@ const DisciplineTopicsPage = () => {
               topic={topic}
               courseId={courseId || ''}
               disciplineId={disciplineId || ''}
-              progress={topicProgress[topic.id] || 0}
               index={index}
-              color={course.color}
             />
           ))}
         </div>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -14,10 +13,9 @@ interface Question {
 
 interface QuizComponentProps {
   questions: Question[];
-  color: string;
 }
 
-const QuizComponent = ({ questions, color }: QuizComponentProps) => {
+const QuizComponent = ({ questions }: QuizComponentProps) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -92,7 +90,7 @@ const QuizComponent = ({ questions, color }: QuizComponentProps) => {
               cy="50" 
             />
             <circle 
-              className={`text-${color}-600`}
+              className="text-primary"
               strokeWidth="10" 
               strokeDasharray={`${percentage * 2.51} 251.2`}
               strokeLinecap="round" 
@@ -112,7 +110,7 @@ const QuizComponent = ({ questions, color }: QuizComponentProps) => {
 
         <Button 
           onClick={resetQuiz} 
-          className={`bg-${color}-600 hover:bg-${color}-700 mt-4`}
+          className="bg-primary hover:bg-primary/90 mt-4"
         >
           Tentar Novamente
         </Button>
@@ -198,7 +196,7 @@ const QuizComponent = ({ questions, color }: QuizComponentProps) => {
         <Button
           onClick={handleNextQuestion}
           disabled={selectedOption === null}
-          className={`flex items-center gap-2 bg-${color}-600 hover:bg-${color}-700`}
+          className="flex items-center gap-2 bg-primary hover:bg-primary/90"
         >
           <span>
             {currentQuestionIndex < questions.length - 1 ? "Próxima Questão" : "Ver Resultado"}

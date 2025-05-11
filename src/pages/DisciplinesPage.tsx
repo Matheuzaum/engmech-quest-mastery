@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import MainLayout from "@/components/Layout/MainLayout";
@@ -30,16 +29,11 @@ const DisciplinesPage = () => {
     fetchCourse();
   }, [courseId]);
 
-  // Function to get button class based on course color
-  const getButtonClass = (color: string) => {
-    return `w-full bg-${color}-600 hover:bg-${color}-700 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors`;
-  };
-
   if (loading) {
     return (
       <MainLayout>
         <div className="container py-20 flex justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-engineer-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
         </div>
       </MainLayout>
     );
@@ -65,7 +59,7 @@ const DisciplinesPage = () => {
 
   return (
     <MainLayout>
-      <div className="container py-10">
+      <div className="container py-20">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -94,7 +88,7 @@ const DisciplinesPage = () => {
         <div className="mb-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className={`text-3xl font-bold text-${course?.color}-700`}>{course?.title}</h1>
+              <h1 className="text-3xl font-bold text-primary">{course?.title}</h1>
               <p className="text-muted-foreground mt-2">{course?.description}</p>
             </div>
             <div className="shrink-0">
@@ -119,7 +113,7 @@ const DisciplinesPage = () => {
                 <ul className="space-y-1 ml-1">
                   {discipline.topics.slice(0, 3).map((topic) => (
                     <li key={topic.id} className="flex items-start text-sm gap-2">
-                      <Book className={`h-4 w-4 mt-1 shrink-0 text-${course?.color}-600`} />
+                      <Book className="h-4 w-4 mt-1 shrink-0 text-primary" />
                       <span className="line-clamp-1">{topic.title}</span>
                     </li>
                   ))}
@@ -133,9 +127,9 @@ const DisciplinesPage = () => {
               <CardFooter>
                 <Link
                   to={`/courses/${courseId}/${discipline.id}`}
-                  className={getButtonClass(course.color)}
+                  className="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md flex items-center justify-center gap-2 transition-colors"
                 >
-                  <span>Ver Disciplina</span>
+                  <span>Estudar</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </CardFooter>

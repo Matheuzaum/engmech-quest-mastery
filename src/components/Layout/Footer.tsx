@@ -1,5 +1,3 @@
-
-import { Book } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -8,8 +6,10 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <Book className="h-6 w-6 text-engineer-700" />
-            <span className="text-xl font-heading font-bold">EngRápido</span>
+            <Link to="/" className="flex items-center gap-2">
+              <i className="fa-solid fa-graduation-cap text-2xl" style={{ color: '#3b82f6' }}></i>
+              <span className="text-xl font-heading font-bold text-primary">EngRápido</span>
+            </Link>
           </div>
           
           <div className="flex flex-wrap gap-6 justify-center">
