@@ -8,35 +8,8 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbS
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Home, Book, Check, AlertTriangle, ArrowRight, ArrowLeft } from "lucide-react";
 import QuizComponent from "@/components/Quiz/QuizComponent";
-
-interface Course {
-  id: string;
-  title: string;
-  color: string;
-  disciplines: Discipline[];
-}
-
-interface Discipline {
-  id: string;
-  title: string;
-  topics: Topic[];
-}
-
-interface Topic {
-  id: string;
-  title: string;
-  summary: string;
-  tips: string[];
-  warnings: string[];
-  questions: Question[];
-}
-
-interface Question {
-  question: string;
-  options: string[];
-  correctAnswer: number;
-  explanation: string;
-}
+import content from "@/data/content.json";
+import { Course, Discipline, Topic } from "@/types/course";
 
 const TopicPage = () => {
   const { courseId, disciplineId, topicId } = useParams<{ courseId: string; disciplineId: string; topicId?: string }>();
@@ -49,13 +22,11 @@ const TopicPage = () => {
   const [prevTopic, setPrevTopic] = useState<{ disciplineId: string; topicId: string } | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const loadData = () => {
       try {
         setLoading(true);
-        const response = await fetch("/src/data/content.json");
-        const data = await response.json();
-        
-        const foundCourse = data.courses.find((c: Course) => c.id === courseId);
+        // Use imported content directly instead of fetching
+        const foundCourse = content.courses.find((c: Course) => c.id === courseId);
         setCourse(foundCourse || null);
         
         if (foundCourse) {
@@ -121,12 +92,12 @@ const TopicPage = () => {
         
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error loading topic data:", error);
         setLoading(false);
       }
     };
 
-    fetchData();
+    loadData();
   }, [courseId, disciplineId, topicId]);
 
   if (loading) {
