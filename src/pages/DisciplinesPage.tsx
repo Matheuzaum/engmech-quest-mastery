@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { ArrowRight, Book, Home } from "lucide-react";
 import { Course, Discipline, Topic } from "@/types/course";
+import content from "@/data/content.json";
 
 const DisciplinesPage = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -13,20 +14,10 @@ const DisciplinesPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchCourse = async () => {
-      try {
-        const response = await fetch("/src/data/content.json");
-        const data = await response.json();
-        const foundCourse = data.courses.find((c: Course) => c.id === courseId);
-        setCourse(foundCourse || null);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching course:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchCourse();
+    // Use the imported content directly
+    const foundCourse = content.courses.find((c: Course) => c.id === courseId);
+    setCourse(foundCourse || null);
+    setLoading(false);
   }, [courseId]);
 
   if (loading) {

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Course } from "@/types/course";
+import content from "@/data/content.json";
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -14,20 +15,10 @@ const CoursesPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const response = await fetch("/src/data/content.json");
-        const data = await response.json();
-        setCourses(data.courses);
-        setFilteredCourses(data.courses);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching courses:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchCourses();
+    // Use the imported content directly instead of fetching
+    setCourses(content.courses);
+    setFilteredCourses(content.courses);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
