@@ -102,13 +102,13 @@ const DisciplinesPage = () => {
               <CardContent>
                 <p className="text-sm font-medium mb-2">Tópicos incluídos:</p>
                 <ul className="space-y-1 ml-1">
-                  {discipline.topics.slice(0, 3).map((topic) => (
+                  {Array.isArray(discipline.topics) && discipline.topics.slice(0, 3).map((topic) => (
                     <li key={topic.id} className="flex items-start text-sm gap-2">
                       <Book className="h-4 w-4 mt-1 shrink-0 text-primary" />
                       <span className="line-clamp-1">{topic.title}</span>
                     </li>
                   ))}
-                  {discipline.topics.length > 3 && (
+                  {Array.isArray(discipline.topics) && discipline.topics.length > 3 && (
                     <li className="text-sm text-muted-foreground">
                       + {discipline.topics.length - 3} mais tópicos
                     </li>

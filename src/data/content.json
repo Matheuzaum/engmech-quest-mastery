@@ -1,4 +1,3 @@
-
 {
   "courses": [
     {
@@ -414,7 +413,341 @@
               ]
             }
           ]
+        },
+        {
+          "id": "materials-ii",
+          "title": "Materiais II",
+          "description": "Estudo dos mecanismos de falha e critérios de projeto",
+          "topics": [
+            {
+              "id": "thermal-transformations",
+              "title": "Transformações Térmicas e Diagramas TTT",
+              "summary": "Estudo da relação entre taxas de resfriamento, microestruturas e tratamentos térmicos em aços.",
+              "tips": [
+                "Taxas de resfriamento rápidas (> crítica) formam martensita.",
+                "Taxas intermediárias formam bainita (austêmpera).",
+                "Taxas lentas formam perlita (fina ou grossa).",
+                "Martêmpera: resfriamento até acima de M-s e depois resfriamento lento para reduzir tensões."
+              ],
+              "warnings": [
+                "Cuidado com confusão entre austêmpera (bainita) e martêmpera (martensita revenida).",
+                "A temperatura M-s varia conforme a liga do aço."
+              ],
+              "questions": [
+                {
+                  "question": "Com base no diagrama TTT do aço eutetóide, qual tratamento provoca transformação inteiramente adifusional?",
+                  "options": [
+                    "Tratamento 1: perlita fina",
+                    "Tratamento 2: microestrutura mais dura que o tratamento 4",
+                    "Tratamento 3: transformação adifusional",
+                    "Tratamento 4: bainita inferior"
+                  ],
+                  "correctAnswer": 2,
+                  "explanation": "O tratamento 3 corresponde ao resfriamento rápido que forma martensita, uma transformação adifusional."
+                },
+                {
+                  "question": "Qual microestrutura é obtida após austêmpera?",
+                  "options": [
+                    "Ferrita",
+                    "Perlita",
+                    "Bainita",
+                    "Martensita"
+                  ],
+                  "correctAnswer": 2,
+                  "explanation": "A austêmpera mantém o aço na região de bainita do diagrama TTT."
+                }
+              ]
+            },
+            {
+              "id": "microstructures",
+              "title": "Microestruturas de Aços",
+              "summary": "Composição e características das microestruturas em aços carbono e ligados.",
+              "tips": [
+                "Perlita: 88% ferrita + 12% cementita (em peso) para aço eutetóide.",
+                "Aços hipoeutetóides: ferrita pró-eutetóide + perlita.",
+                "Tratamento intercrítico (entre A1 e A3) resulta em ferrita + martensita."
+              ],
+              "warnings": [
+                "Não confunda perlita fina (resfriamento moderado) com perlita grossa (resfriamento lento)."
+              ],
+              "questions": [
+                {
+                  "question": "A perlita de um aço SAE 1040 (0,77%C) é composta por:",
+                  "options": [
+                    "88,4% ferrita e 11,6% cementita",
+                    "88,8% cementita e 11,2% ferrita",
+                    "50% austenita e 50% ferrita",
+                    "75% martensita e 25% ferrita"
+                  ],
+                  "correctAnswer": 0,
+                  "explanation": "A perlita em aços eutetóides tem ~88% ferrita e 12% cementita (regra da alavanca)."
+                },
+                {
+                  "question": "Um aço tratado no intervalo intercrítico e resfriado rapidamente terá qual microestrutura?",
+                  "options": [
+                    "Martensita",
+                    "Ferrita e perlita",
+                    "Ferrita e martensita",
+                    "Austenita"
+                  ],
+                  "correctAnswer": 2,
+                  "explanation": "O tratamento intercrítico preserva ferrita existente e transforma austenita restante em martensita."
+                }
+              ]
+            },
+            {
+              "id": "magnetic-properties",
+              "title": "Propriedades Magnéticas e Classificação de Aços",
+              "summary": "Comportamento magnético das fases e classificação de aços por normas AISI/SAE.",
+              "tips": [
+                "Ferrita: ferromagnética à temperatura ambiente.",
+                "Austenita: paramagnética.",
+                "Aço SAE 10XX: aços carbono (ex: 1040 = 0,40%C).",
+                "AISI D2: aço ferramenta com carbetos de cromo."
+              ],
+              "warnings": [
+                "Martensita pode reter austenita retida paramagnética se não revenida."
+              ],
+              "questions": [
+                {
+                  "question": "Qual fase é paramagnética?",
+                  "options": [
+                    "Ferrita",
+                    "Austenita",
+                    "Martensita",
+                    "Cementita"
+                  ],
+                  "correctAnswer": 1,
+                  "explanation": "A austenita (γ-Fe) é paramagnética devido à sua estrutura CFC."
+                },
+                {
+                  "question": "Qual aço é usado para cementação?",
+                  "options": [
+                    "SAE 4340",
+                    "SAE 8620",
+                    "AISI D2",
+                    "SAE 1040"
+                  ],
+                  "correctAnswer": 1,
+                  "explanation": "SAE 8620 é um aço de baixo carbono comum em cementação."
+                }
+              ]
+            },
+            {
+              "id": "thermomechanical-processes",
+              "title": "Processos Termomecânicos e Ferros Fundidos",
+              "summary": "Técnicas de processamento e características de ferros fundidos.",
+              "tips": [
+                "Panquecamento: deformação da austenita entre TNR e A3 para refinar grãos.",
+                "Ferro fundido nodular (ADI): grafita nodular devido à adição de magnésio."
+              ],
+              "warnings": [
+                "Ferros fundidos nodulares não são conformáveis por laminação."
+              ],
+              "questions": [
+                {
+                  "question": "O intervalo de panquecamento da austenita é:",
+                  "options": [
+                    "Entre A1 e A3",
+                    "Entre TNR e A3",
+                    "Acima de A3",
+                    "Abaixo de TNR"
+                  ],
+                  "correctAnswer": 1,
+                  "explanation": "O panquecamento ocorre entre TNR (Temperatura Não Recristalização) e A3."
+                },
+                {
+                  "question": "Ferros fundidos nodulares possuem grafita em forma de:",
+                  "options": [
+                    "Lamelas",
+                    "Nódulos",
+                    "Esferas",
+                    "Flocos"
+                  ],
+                  "correctAnswer": 1,
+                  "explanation": "A adição de magnésio promove a formação de grafita nodular."
+                }
+              ]
+            }
+          ]
         }
+      ]
+    },
+    {
+      "id": "admin-economics",
+      "title": "Administração e Economia",
+      "icon": "briefcase",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "color": "business",
+      "disciplines": [
+        {
+        "id": "engenharia-economica",
+        "title": "Engenharia Econômica",
+        "description": "Disciplina que estuda os princípios e técnicas de análise financeira aplicados a investimentos, financiamentos e tomada de decisão econômica em projetos de engenharia.",
+        "topics": [
+          {
+            "id": "juros-simples-e-compostos",
+            "title": "Juros Simples e Compostos",
+            "summary": "Nesta seção aprende-se que PV (valor presente) é o montante inicial investido ou financiado; i é a taxa de juros por período (dia, mês ou ano) e n é o número de períodos. Use J = PV × i × n quando os juros não se incorporam ao principal (juros simples) — ideal para aplicações ou financiamentos de curto prazo sem capitalização. Use FV = PV × (1 + i)ⁿ quando os juros de cada período são adicionados ao saldo para gerar juros sobre juros (juros compostos) — indicado para investimentos ou empréstimos de médio a longo prazo. Converta sempre a taxa i para o mesmo intervalo de tempo de n (por exemplo, transforme taxa anual em mensal antes de aplicar para meses) e ajuste os critérios de contagem de dias (360, 365 ou misto) conforme o enunciado.",
+            "tips": [
+              "Para juros simples use J = PV × i × n (i na mesma unidade de n).",
+              "Para juros compostos use FV = PV × (1 + i)^n.",
+              "Conheça as diferenças entre ano civil (365 dias), comercial (360 dias) e bancário (misto)."
+            ],
+            "warnings": [
+              "Verifique sempre as unidades de tempo (dias, meses, anos) e converta a taxa de juros para o mesmo período.",
+              "Ao optar por diferentes critérios de contagem de dias, compare os ganhos para escolher o mais favorável."
+            ],
+            "questions": [
+              {
+                "question": "Em uma aplicação de R$ 13 500,00 a 20,40% a.a., no regime de juros bancários, com prazo de 77 dias (ano comercial para taxa e civil para prazo), qual foi o ganho?",
+                "options": [
+                  "R$ 580,98",
+                  "R$ 573,75",
+                  "R$ 589,05",
+                  "R$ 600,00"
+                ],
+                "correctAnswer": 2,
+                "explanation": "Usando juros bancários (taxa sobre 360 dias e prazo em 77 dias civil): J = 13 500 × 0,2040/360 × 77 = R$ 589,05 :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}."
+              },
+              {
+                "question": "Qual é o custo efetivo total anual de um empréstimo de R$ 21 000,00, prazo de 3 meses, taxa nominal de 47,40% a.a. e encargos de R$ 275,00 descontados na liberação?",
+                "options": [
+                  "50,00% a.a.",
+                  "55,30% a.a.",
+                  "60,00% a.a.",
+                  "65,00% a.a."
+                ],
+                "correctAnswer": 1,
+                "explanation": "Considerando PV líquido de 21 000–275 = 20 725 e FV = 21 000×(1+0,4740)^(1/4)=23 138,95, CET = (23 138,95/20 725)^(4)–1 = 55,30% a.a. :contentReference[oaicite:2]{index=2}:contentReference[oaicite:3]{index=3}."
+              }
+            ]
+          },
+          {
+            "id": "taxas-equivalentes-e-acumuladas",
+            "title": "Taxas Equivalentes e Acumuladas",
+            "summary": "Aqui definimos i₁ como taxa em um período de duração n₁ e i₂ como taxa em período n₂. Para converter use (1 + i₁)ⁿ¹ = (1 + i₂)ⁿ² e resolva para a taxa desconhecida. Em séries de retornos diferentes a cada período, calcule o fator acumulado multiplicando (1 + iᵢ) de cada período e depois extraia a taxa média: iₘédio = (∏(1 + iᵢ))^(1/N) – 1, onde N é o número de períodos. Diferencie taxa nominal (informada de forma anual, sem considerar capitalização) de taxa efetiva (real após capitalização) e exponencie sempre corretamente antes de comparar ou aplicar em fórmulas.",
+            "tips": [
+              "Para equivalência: (1 + i1)^(n1) = (1 + i2)^(n2).",
+              "Para taxa média de um período múltiplo: i_médio = (1 + i_acumulada)^(1/N) – 1."
+            ],
+            "warnings": [
+              "Não confunda taxa nominal com efetiva; sempre exponencie corretamente.",
+              "Ao acumular rentabilidades mensais heterogêneas, multiplique os fatores (1 + i) de cada mês antes de extrair a média."
+            ],
+            "questions": [
+              {
+                "question": "Qual a taxa bimestral equivalente a 6% ao trimestre com capitalização mensal?",
+                "options": [
+                  "3,98% bimestral",
+                  "4,00% bimestral",
+                  "4,04% bimestral",
+                  "4,10% bimestral"
+                ],
+                "correctAnswer": 2,
+                "explanation": "6% ao trimestre = 2% am; (1,02)^2–1 = 4,04% ab :contentReference[oaicite:4]{index=4}:contentReference[oaicite:5]{index=5}."
+              },
+              {
+                "question": "Em um fundo, um investidor obteve ganho de R$ 581,50 sobre R$ 20 000,00 em 3 meses. Qual a taxa de rentabilidade mensal?",
+                "options": [
+                  "0,90% mês",
+                  "0,95% mês",
+                  "0,96% mês",
+                  "1,00% mês"
+                ],
+                "correctAnswer": 2,
+                "explanation": "FV=20 581,50; i = (FV/PV)^(1/3)–1 = 0,9599% am :contentReference[oaicite:6]{index=6}:contentReference[oaicite:7]{index=7}."
+              }
+            ]
+          },
+          {
+            "id": "sistemas-de-amortizacao",
+            "title": "Sistemas de Amortização",
+            "summary": "Neste tópico PV é o valor financiado, i é a taxa por período e n o número de prestações. No SAC (amortização constante), a parcela de amortização = PV/n e o juro de cada período = saldo devedor anterior × i, resultando em prestações decrescentes. No PRICE (anuidade), a prestação PMT é constante e calculada por PMT = PV × [i / (1–(1+i)^–n)]; o saldo devedor após k parcelas = PMT×[1–(1+i)^(–(n–k))]/i. Use SAC para reduzir custo total de juros e PRICE para maior previsibilidade de fluxo.",
+            "tips": [
+              "SAC: amortização constante, prestações decrescentes.",
+              "PRICE: prestações constantes — use fórmula do valor presente de anuidade.",
+              "Francês: similar ao PRICE, mas com enfoque no juro do saldo devedor."
+            ],
+            "warnings": [
+              "Verifique sempre a taxa de juros mensal correta (i_aa^(1/12)–1).",
+              "Ao calcular o saldo devedor, considere amortizações já pagas."
+            ],
+            "questions": [
+              {
+                "question": "Qual é o valor da prestação de um empréstimo de R$ 9 900,00, prazo de 24 meses e taxa de 5,5% am no sistema PRICE (primeira prestação paga após 6 meses)?",
+                "options": [
+                  "R$ 983,82",
+                  "R$ 713,51",
+                  "R$ 1 000,00",
+                  "R$ 1 200,00"
+                ],
+                "correctAnswer": 0,
+                "explanation": "FV=9 900×1,055^5=12 938,90; PMT = 12 938,90×0,055/[1–(1,055)^–24] = R$ 983,82 :contentReference[oaicite:8]{index=8}:contentReference[oaicite:9]{index=9}."
+              },
+              {
+                "question": "Em um financiamento de R$ 36 000,00 em 48 meses a 17,32% a.a. (i=1,44% am), qual o saldo devedor após a 36ª prestação no sistema PRICE?",
+                "options": [
+                  "R$ 10 000,00",
+                  "R$ 11 430,16",
+                  "R$ 12 000,00",
+                  "R$ 15 000,00"
+                ],
+                "correctAnswer": 1,
+                "explanation": "PMT = 1 044,00; SD_36 = [PMT/i]×[1–(1+i)^(–12)] = R$ 11 430,16 :contentReference[oaicite:10]{index=10}:contentReference[oaicite:11]{index=11}."
+              },
+              {
+                "question": "No mesmo financiamento, qual foi o valor do juro referente à 27ª prestação no sistema francês?",
+                "options": [
+                  "R$ 259,38",
+                  "R$ 281,40",
+                  "R$ 472,35",
+                  "R$ 482,40"
+                ],
+                "correctAnswer": 0,
+                "explanation": "Saldo antes da 27ª = 19 356,38; J27 = SD26 × 0,0134 = R$ 259,38 :contentReference[oaicite:12]{index=12}:contentReference[oaicite:13]{index=13}."
+              }
+            ]
+          },
+          {
+            "id": "analise-de-viabilidade",
+            "title": "Análise de Viabilidade",
+            "summary": "Defina I₀ como investimento inicial e Ft como fluxo de caixa no final do período t. Calcule VPL = Σ(Ft/(1+i)ᵗ) – I₀, onde i é a taxa mínima exigida no mesmo período de Ft; VPL positivo indica projeto viável. A TIR é a taxa que zera VPL e pode ser obtida por interpolação ou função financeira. Converta sempre i_req para a mesma periodicidade dos fluxos e ajuste início/fim de período conforme enunciado (fluxo no começo usa (1+i)^(t–1), no fim (1+i)ᵗ).",
+            "tips": [
+              "VPL = Σ(Fₜ/(1+i)ᵗ) – I₀; positivo indica viabilidade.",
+              "TIR é a taxa que faz VPL = 0; compare com taxa mínima requerida."
+            ],
+            "warnings": [
+              "Observe o momento dos fluxos (início vs. fim de período).",
+              "Sempre converta i_req para mesma periodicidade dos fluxos."
+            ],
+            "questions": [
+              {
+                "question": "Projeto com I0 = R$ 5 000,00 e fluxos de R$ 1 600; 1 900; 2 200; 2 500 ao final dos anos 3–6. Qual a TIR aproximada?",
+                "options": [
+                  "10,00% a.a.",
+                  "11,3670% a.a.",
+                  "12,00% a.a.",
+                  "15,00% a.a."
+                ],
+                "correctAnswer": 1,
+                "explanation": "TIR obtida por interpolação entre VPL(10%)=277,04 e VPL(13%)=–330,95 → 11,3670% a.a. :contentReference[oaicite:14]{index=14}:contentReference[oaicite:15]{index=15}."
+              },
+              {
+                "question": "Nesse mesmo projeto, qual é o VPL a 13% a.a.?",
+                "options": [
+                  "R$ –330,95",
+                  "R$ 277,04",
+                  "R$ 0,00",
+                  "R$ 100,00"
+                ],
+                "correctAnswer": 0,
+                "explanation": "VPL = –5 000 + 1 600/1,13^3 + … + 2 500/1,13^6 = –330,95 :contentReference[oaicite:16]{index=16}:contentReference[oaicite:17]{index=17}."
+              }
+            ]
+          }
+        ]
+      }
       ]
     }
   ]

@@ -36,7 +36,7 @@ const CoursesPage = () => {
 
   const getTopicsCount = (course: Course) => {
     return course.disciplines.reduce((acc, discipline) => {
-      return acc + discipline.topics.length;
+      return acc + (Array.isArray(discipline.topics) ? discipline.topics.length : 0);
     }, 0);
   };
 
