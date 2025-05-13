@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import React from "react";
 import MainLayout from "@/components/Layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -11,6 +12,37 @@ import QuizComponent from "@/components/Quiz/QuizComponent";
 import content from "@/data/content.json";
 import { Course, Discipline, Topic } from "@/types/course";
 
+// Function to process text with <sub> and <sup> tags
+const processTextWithSubSup = (text: string) => {
+  const subSupRegex = /<sub>(.*?)<\/sub>|<sup>(.*?)<\/sup>/g;
+  const parts = text.split(subSupRegex);
+
+  return parts.map((part, index) => {
+    if (index % 3 === 1) {
+      // Matches <sub>
+      return <sub key={index}>{part}</sub>;
+    } else if (index % 3 === 2) {
+      // Matches <sup>
+      return <sup key={index}>{part}</sup>;
+    } else {
+      // Regular text
+      return part;
+    }
+  });
+};
+
+// Corrigindo a função processTextWithLineBreaksAndSubSup para evitar erros de sintaxe
+const processTextWithLineBreaksAndSubSup = (text: string) => {
+  return text.split(/(\n|<sub>|<\/sub>|<sup>|<\/sup>)/g).map((part, index) => {
+    if (part === "\n") return <br key={index} />;
+    if (part === "<sub>") return <sub key={index}></sub>;
+    if (part === "</sub>") return <React.Fragment key={index}></React.Fragment>;
+    if (part === "<sup>") return <sup key={index}></sup>;
+    if (part === "</sup>") return <React.Fragment key={index}></React.Fragment>;
+    return <React.Fragment key={index}>{part}</React.Fragment>;
+  });
+};
+
 const TopicPage = () => {
   const { courseId, disciplineId, topicId } = useParams<{ courseId: string; disciplineId: string; topicId?: string }>();
   const [course, setCourse] = useState<Course | null>(null);
@@ -21,36 +53,41 @@ const TopicPage = () => {
   const [nextTopic, setNextTopic] = useState<{ disciplineId: string; topicId: string } | null>(null);
   const [prevTopic, setPrevTopic] = useState<{ disciplineId: string; topicId: string } | null>(null);
 
+  const processQuizQuestions = (questions: any) => {
+    return questions.map((question: any) => ({
+      question: processTextWithLineBreaksAndSubSup(question.question),
+      options: question.options.map((option: any) => processTextWithLineBreaksAndSubSup(option)),
+      explanation: processTextWithLineBreaksAndSubSup(question.explanation),
+      correctAnswer: question.correctAnswer,
+    }));
+  };
+
   useEffect(() => {
     const loadData = () => {
       try {
         setLoading(true);
-        // Use imported content directly instead of fetching
         const foundCourse = content.courses.find((c: Course) => c.id === courseId);
         setCourse(foundCourse || null);
-        
+
         if (foundCourse) {
           const foundDiscipline = foundCourse.disciplines.find((d: Discipline) => d.id === disciplineId);
           setDiscipline(foundDiscipline || null);
-          
+
           if (foundDiscipline) {
-            // If no topic ID is provided, use the first topic in the discipline
-            const topicToShow = topicId 
-              ? foundDiscipline.topics.find((t: Topic) => t.id === topicId) 
+            const topicToShow = topicId
+              ? foundDiscipline.topics.find((t: Topic) => t.id === topicId)
               : foundDiscipline.topics[0];
-              
+
             setTopic(topicToShow || null);
-            
-            // Find the current topic index
+
             if (topicToShow) {
               const currentIndex = foundDiscipline.topics.findIndex((t: Topic) => t.id === topicToShow.id);
-              
-              // Find next topic (within same discipline or next discipline)
+
               let nextTopicData = null;
               if (currentIndex < foundDiscipline.topics.length - 1) {
                 nextTopicData = {
                   disciplineId: foundDiscipline.id,
-                  topicId: foundDiscipline.topics[currentIndex + 1].id
+                  topicId: foundDiscipline.topics[currentIndex + 1].id,
                 };
               } else {
                 const disciplineIndex = foundCourse.disciplines.findIndex((d: Discipline) => d.id === disciplineId);
@@ -59,19 +96,18 @@ const TopicPage = () => {
                   if (nextDiscipline.topics.length > 0) {
                     nextTopicData = {
                       disciplineId: nextDiscipline.id,
-                      topicId: nextDiscipline.topics[0].id
+                      topicId: nextDiscipline.topics[0].id,
                     };
                   }
                 }
               }
               setNextTopic(nextTopicData);
-              
-              // Find previous topic (within same discipline or previous discipline)
+
               let prevTopicData = null;
               if (currentIndex > 0) {
                 prevTopicData = {
                   disciplineId: foundDiscipline.id,
-                  topicId: foundDiscipline.topics[currentIndex - 1].id
+                  topicId: foundDiscipline.topics[currentIndex - 1].id,
                 };
               } else {
                 const disciplineIndex = foundCourse.disciplines.findIndex((d: Discipline) => d.id === disciplineId);
@@ -80,7 +116,7 @@ const TopicPage = () => {
                   if (prevDiscipline.topics.length > 0) {
                     prevTopicData = {
                       disciplineId: prevDiscipline.id,
-                      topicId: prevDiscipline.topics[prevDiscipline.topics.length - 1].id
+                      topicId: prevDiscipline.topics[prevDiscipline.topics.length - 1].id,
                     };
                   }
                 }
@@ -89,7 +125,7 @@ const TopicPage = () => {
             }
           }
         }
-        
+
         setLoading(false);
       } catch (error) {
         console.error("Error loading topic data:", error);
@@ -127,6 +163,8 @@ const TopicPage = () => {
       </MainLayout>
     );
   }
+
+  const processedQuestions = topic.questions ? processQuizQuestions(topic.questions) : [];
 
   return (
     <MainLayout>
@@ -180,7 +218,9 @@ const TopicPage = () => {
             <div className="prose max-w-none">
               <div className="bg-card rounded-lg p-6 border shadow-sm">
                 <h3 className="text-xl font-bold mb-4">Resumo</h3>
-                <p className="mb-6 text-foreground/90">{topic.summary}</p>
+                <p className="mb-6 text-foreground/90">
+                  {processTextWithLineBreaksAndSubSup(topic.summary)}
+                </p>
               </div>
             </div>
           </TabsContent>
@@ -199,7 +239,7 @@ const TopicPage = () => {
                           <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white text-xs font-medium shrink-0 mt-0.5">
                             {index + 1}
                           </span>
-                          <span>{tip}</span>
+                          <span>{processTextWithLineBreaksAndSubSup(tip)}</span>
                         </li>
                       ))}
                     </ul>
@@ -218,7 +258,7 @@ const TopicPage = () => {
                           <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-destructive/80 text-white text-xs font-medium shrink-0 mt-0.5">
                             {index + 1}
                           </span>
-                          <span>{warning}</span>
+                          <span>{processTextWithLineBreaksAndSubSup(warning)}</span>
                         </li>
                       ))}
                     </ul>
@@ -228,7 +268,7 @@ const TopicPage = () => {
             </div>
           </TabsContent>
           <TabsContent value="quiz" className="mt-6">
-            <QuizComponent questions={topic.questions} />
+            <QuizComponent questions={processedQuestions} />
           </TabsContent>
         </Tabs>
 
@@ -246,6 +286,7 @@ const TopicPage = () => {
             <Link
               to={`/courses/${courseId}/${nextTopic.disciplineId}/${nextTopic.topicId}`}
               className="inline-flex items-center gap-2 text-primary hover:underline"
+              onClick={() => setActiveTab("resumo")}
             >
               Próximo tópico
               <ArrowRight className="h-4 w-4" />
