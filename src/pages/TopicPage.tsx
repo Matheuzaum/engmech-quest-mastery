@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Home, Book, Check, AlertTriangle, ArrowRight, ArrowLeft } from "lucide-react";
-import QuizComponent from "@/components/Quiz/QuizComponent";
+import QuestionsComponent from "@/components/Quiz/QuestionsComponent";
 import content from "@/data/content.json";
 import { Course, Discipline, Topic } from "@/types/course";
 
@@ -33,12 +33,31 @@ const processTextWithSubSup = (text: string) => {
 
 // Corrigindo a função processTextWithLineBreaksAndSubSup para evitar erros de sintaxe
 const processTextWithLineBreaksAndSubSup = (text: string) => {
-  return text.split(/(\n|<sub>|<\/sub>|<sup>|<\/sup>)/g).map((part, index) => {
+  // Primeiro, vamos dividir o texto em partes baseado em quebras de linha e tags
+  const parts = text.split(/(\n|<sub>|<\/sub>|<sup>|<\/sup>|<img>.*?<\/img>)/g);
+  
+  return parts.map((part, index) => {
     if (part === "\n") return <br key={index} />;
     if (part === "<sub>") return <sub key={index}></sub>;
     if (part === "</sub>") return <React.Fragment key={index}></React.Fragment>;
     if (part === "<sup>") return <sup key={index}></sup>;
     if (part === "</sup>") return <React.Fragment key={index}></React.Fragment>;
+    
+    // Processa tags de imagem
+    const imgMatch = part.match(/<img>(.*?)<\/img>/);
+    if (imgMatch) {
+      return (
+        <div key={index} className="my-4 flex justify-center">
+          <img 
+            src={imgMatch[1]} 
+            alt="Questão" 
+            className="max-w-full h-auto rounded-lg shadow-md"
+            style={{ maxHeight: '400px', objectFit: 'contain' }}
+          />
+        </div>
+      );
+    }
+    
     return <React.Fragment key={index}>{part}</React.Fragment>;
   });
 };
@@ -53,10 +72,11 @@ const TopicPage = () => {
   const [nextTopic, setNextTopic] = useState<{ disciplineId: string; topicId: string } | null>(null);
   const [prevTopic, setPrevTopic] = useState<{ disciplineId: string; topicId: string } | null>(null);
 
-  const processQuizQuestions = (questions: any) => {
+  const processQuestions = (questions: any) => {
     return questions.map((question: any) => ({
       question: processTextWithLineBreaksAndSubSup(question.question),
-      options: question.options.map((option: any) => processTextWithLineBreaksAndSubSup(option)),
+      image: question.image,
+      options: question.options?.map((option: any) => processTextWithLineBreaksAndSubSup(option)),
       explanation: processTextWithLineBreaksAndSubSup(question.explanation),
       correctAnswer: question.correctAnswer,
     }));
@@ -164,7 +184,7 @@ const TopicPage = () => {
     );
   }
 
-  const processedQuestions = topic.questions ? processQuizQuestions(topic.questions) : [];
+  const processedQuestions = topic.questions ? processQuestions(topic.questions) : [];
 
   return (
     <MainLayout>
@@ -212,7 +232,7 @@ const TopicPage = () => {
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="resumo">Resumo</TabsTrigger>
             <TabsTrigger value="dicas">Dicas e Macetes</TabsTrigger>
-            <TabsTrigger value="quiz">Quiz</TabsTrigger>
+            <TabsTrigger value="quiz">Questões</TabsTrigger>
           </TabsList>
           <TabsContent value="resumo" className="mt-6">
             <div className="prose max-w-none">
@@ -268,7 +288,7 @@ const TopicPage = () => {
             </div>
           </TabsContent>
           <TabsContent value="quiz" className="mt-6">
-            <QuizComponent questions={processedQuestions} />
+            <QuestionsComponent questions={processedQuestions} />
           </TabsContent>
         </Tabs>
 

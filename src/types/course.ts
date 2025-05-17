@@ -6,8 +6,8 @@ export interface Topic {
   warnings?: string[];
   questions?: {
     question: string | JSX.Element[]; // Updated to accept JSX.Element[]
-    options: (string | JSX.Element[])[]; // Updated to accept JSX.Element[]
-    correctAnswer: number;
+    options?: (string | JSX.Element[])[]; // Made optional
+    correctAnswer?: number; // Made optional
     explanation: string | JSX.Element[]; // Updated to accept JSX.Element[]
   }[];
 }

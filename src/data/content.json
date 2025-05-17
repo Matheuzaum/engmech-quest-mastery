@@ -27,10 +27,16 @@
               ],
               "questions": [
                 {
-                  "question": "Qual é a unidade de medida da viscosidade dinâmica?",
+                  "question": "Qual é a unidade de medida da viscosidade <img>https://images.unsplash.com/photo-1518770660439-4636190af475</img>dinâmica?",
                   "options": ["Pa·s", "kg/m³", "m/s", "N/m²"],
                   "correctAnswer": 0,
                   "explanation": "A viscosidade dinâmica é medida em Pascal-segundo (Pa·s) ou em poise (P)"
+                },
+                {
+                  "question": "Analise o diagrama de tensão-deformação abaixo e identifique o ponto de escoamento: <img>https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b</img>",
+                  "options": ["Ponto A", "Ponto B", "Ponto C", "Ponto D"],
+                  "correctAnswer": 1,
+                  "explanation": "O ponto B representa o ponto de escoamento, onde o material começa a se deformar plasticamente sem aumento significativo da tensão. Veja a região destacada: <img>https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b</img>"
                 },
                 {
                   "question": "O que acontece com a viscosidade de um líquido quando a temperatura aumenta?",
@@ -232,9 +238,9 @@
                 },
                 {
                   "question": "O que acontece com a eficiência do ciclo de Carnot se a temperatura da fonte quente aumentar?",
-                  "options": ["Diminui", "Aumenta", "Permanece constante", "Torna-se zero"],
+                  "options": [],
                   "correctAnswer": 1,
-                  "explanation": "Se Tq aumenta (com Tf constante), então η = 1 - Tf/Tq aumenta"
+                  "explanation": "Se Tq aumenta (com Tf constante), então η = 1 - Tf/Tq aumenta. Isso ocorre porque a eficiência do ciclo de Carnot é diretamente proporcional à diferença de temperatura entre a fonte quente e a fonte fria."
                 }
               ]
             },
@@ -591,37 +597,22 @@
               ],
               "questions": [
                 {
-                  "question": "Defina Resiliência e Tenacidade de um material e cite um exemplo prático para cada propriedade.",
-                  "options": [
-                    "Resiliência: energia até a fratura; Tenacidade: energia até o limite elástico. Ex: Resiliência em parafusos, Tenacidade em molas.",
-                    "Resiliência: energia até o limite elástico; Tenacidade: energia até a fratura. Ex: Resiliência em molas, Tenacidade em materiais de impacto como cabeças de martelo.",
-                    "Resiliência: deformação permanente; Tenacidade: deformação elástica. Ex: Resiliência em borrachas, Tenacidade em cerâmicas.",
-                    "Resiliência: resistência à tração; Tenacidade: resistência ao cisalhamento. Ex: Resiliência em aços, Tenacidade em plásticos."
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "Resiliência é a capacidade de absorver energia no regime elástico (como molas). Tenacidade é a capacidade de absorver energia até a fratura (importante em componentes sujeitos a impacto)."
+                  "question": 
+                  "Questão 1: Defina Resiliência e Tenacidade de um material e em que casos práticos cada uma destas propriedades é relevante.",
+                  "explanation": 
+                  "Resiliência é a capacidade de um material de absorver energia em seu regime elástico; exemplo prático são molas que absorvem energia sem sofrer deformação permanente. Tenacidade é a capacidade de um material de absorver energia até atingir sua ruptura (fratura); relevante em cabeças de martelos que necessitam absorver bastante energia sem fraturar. [cite: 1, 17, 18]"
                 },
                 {
-                  "question": "Em um ensaio de tração, a tensão de engenharia (σ_eng) é 300 MPa e a deformação de engenharia (ε_eng) é 0.05. Determine a tensão verdadeira (σ_true).",
-                  "options": [
-                    "300 MPa",
-                    "315 MPa",
-                    "285 MPa",
-                    "305 MPa"
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "σ_true = σ_eng · (1 + ε_eng) = 300 MPa · (1 + 0.05) = 300 · 1.05 = 315 MPa."
+                  "question": 
+                  "Questão 1: Defina Resiliência e Tenacidade de um material e cite exemplos práticos onde estas propriedades são relevantes. (Prova Final - 24/11/2020)",
+                  "explanation": 
+                  "Resiliência é a capacidade de um material absorver energia quando deformado elasticamente e liberar essa energia ao ser descarregado. Exemplo prático: molas. [cite: 10, 17, 18] Tenacidade é a capacidade de um material absorver energia e deformar-se plasticamente antes de fraturar. Exemplo prático: cabeças de martelos. [cite: 10, 18]"
                 },
                 {
-                  "question": "Um material tem tensão de escoamento (σ_y) de 400 MPa e módulo de elasticidade (E) de 200 GPa. Calcule a Resiliência (u_R).",
-                  "options": [
-                    "0.4 MJ/m³",
-                    "0.8 MJ/m³",
-                    "0.2 MJ/m³",
-                    "0.1 MJ/m³"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "u_R ≈ σ_y² / (2E) = (400e6 Pa)² / (2 · 200e9 Pa) = 0.4e6 J/m³ = 0.4 MJ/m³."
+                  "question": 
+                  "Questão 1: Defina as propriedades de Resiliência e Tenacidade de um material e cite exemplos pr´aticos onde estas propriedades s˜ao relevantes. (Prova I - 16/03/2021)",
+                  "explanation": 
+                  "Tenacidade: Capacidade de um material absorver energia e deformar plasticamente antes de fraturar. Exemplo: Cabeças de martelo. [cite: 68] Resiliência: Capacidade de um material absorver energia em seu regime elástico e retornar ao estado normal após a remoção da tensão. Exemplo: Molas. [cite: 68]"
                 }
               ]
             },
@@ -641,48 +632,24 @@
               ],
               "questions": [
                 {
-                  "question": "Defina a condição de travamento automático de um parafuso de potência e cite um exemplo prático onde esta condição é desejável.",
-                  "options": [
-                    "Ocorre quando o coeficiente de atrito (μ) é menor que a tangente do ângulo de hélice (tanλ). Desejável em prensas.",
-                    "Ocorre quando o coeficiente de atrito (μ) é maior ou igual à tangente do ângulo de hélice (tanλ). Desejável em macacos de carro.",
-                    "Ocorre quando o passo (p) é maior que o diâmetro médio (d_m). Desejável em fusos de máquina ferramenta.",
-                    "Ocorre quando a eficiência (η) é maior que 50%. Desejável em redutores de velocidade."
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "A condição de travamento automático (μ ≥ tanλ) impede que a carga (F) faça o parafuso descer sozinho. É desejável em macacos de carro para que o veículo permaneça levantado."
+                  "question": "Questão 3: Defina força de pré-carregamento de um parafuso e como esta pode ser medida de forma indireta na montagem de uma junção.",
+                  "explanation": "Força de pré-carregamento é a força de tração aplicada a um parafuso durante a montagem, antes da aplicação de cargas de serviço externas. Pode ser medida de forma indireta utilizando chaves de torque (torquímetros), que controlam o torque aplicado ao parafuso, o qual está relacionado com a força de pré-carga. [cite: 3, 19, 20]"
                 },
                 {
-                  "question": "Um parafuso de potência tem passo (p) de 5 mm e diâmetro médio (d_m) de 20 mm. Calcule o ângulo de hélice (λ) em graus.",
-                  "options": [
-                    "4.55°",
-                    "9.09°",
-                    "0.25°",
-                    "18.18°"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "λ = arctan(p / (π · d_m)) = arctan(5 mm / (π · 20 mm)) ≈ 4.55°."
+                  "question": "Questão 2: Defina força de pré-carregamento de um parafuso e como esta pode ser medida de forma indireta na montagem de uma junção. Explique a condição de travamento automático de um parafuso de potência e quando esta condição é desejável, cite um exemplo. (Prova Final - 24/11/2020)",
+                  "explanation": "Força de pré-carregamento: É a força axial de tração introduzida em um parafuso durante a sua instalação (aperto), antes da aplicação de qualquer carga de serviço externa. Pode ser medida indiretamente pelo controle do torque de aperto com um torquímetro, ou pela medição do alongamento do parafuso. [cite: 11, 12, 19, 20] Condição de travamento automático: Um parafuso de potência é autoblocante se o torque necessário para descer a carga for positivo ou nulo, ou seja, a carga não desce por si só quando o torque de acionamento é removido. Isso ocorre quando o ângulo de avanço é menor ou igual ao ângulo de atrito (ou \u03c0 \u22c5 f \u22c5 d_m \u2265 l). Desejável em aplicações como macacos de carro, para que a carga permaneça suspensa com segurança. [cite: 12, 21, 22, 23]"
                 },
                 {
-                  "question": "Para um parafuso com diâmetro médio (d_m) de 30 mm, ângulo de hélice (λ) de 5° e coeficiente de atrito (μ) de 0.1, calcule a eficiência (η) sem considerar atrito no colar.",
-                  "options": [
-                    "35.7%",
-                    "45.9%",
-                    "50.0%",
-                    "60.3%"
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "η = tanλ / (tanλ + μ) = tan(5°) / (tan(5°) + 0.1) ≈ 0.08749 / (0.08749 + 0.1) ≈ 46.7%."
+                  "question": "Questão 4: Encontre a potência requerida para mover um parafuso de potência de 40 mm de diâmetro com rosca quadrada dupla com passo de 6 mm. A porca deve elevar uma carga de F=10 kN a uma velocidade de 48 mm/s. Os coeficientes friccionais são 0.1 para roscas e 0.15 para o colar. O diâmetro friccional do colar é de 60 mm, calcule a eficiência do parafuso. (Proficiência - 04/05/2021)",
+                  "explanation": "Potência requerida (Pot) = 199,15 W. Torque para elevar a carga (TR_total) = 82,98 Nm. Eficiência (η) = 23%. [cite: 37, 38, 39, 40, 56]"
                 },
                 {
-                  "question": "Um parafuso de potência com diâmetro médio (d_m) de 50 mm e passo (p) de 10 mm é usado para levantar uma carga axial (F) de 50 kN. O coeficiente de atrito (μ) entre a rosca e a porca é 0.1. Calcule o torque (T_r) necessário para subir a carga, ignorando o atrito no colar.",
-                  "options": [
-                    "185 Nm",
-                    "210 Nm",
-                    "250 Nm",
-                    "300 Nm"
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "Primeiro, calcule o ângulo de hélice (λ): λ = arctan(p / (π · d_m)) = arctan(10 mm / (π · 50 mm)) ≈ 3.649°. Agora, calcule o torque para subir a carga (T_r): T_r = (F · d_m / 2) · ((tanλ + μ) / (1 - μ · tanλ)) = (50e3 N · 0.05 m / 2) · ((tan(3.649°) + 0.1) / (1 - 0.1 · tan(3.649°))) ≈ 1250 Nm · (0.0637 + 0.1) / (1 - 0.1 · 0.0637) ≈ 1250 · 0.1637 / 0.99363 ≈ 205 Nm. A opção mais próxima é 210 Nm."
+                  "question": "Questão 2: Defina força de pré-carregamento de um parafuso e como pode ser medida de forma indireta na montagem de uma junção. Explique a condição de travamento automático de um parafuso de potência e em que casos esta condição é desejável. (Prova I - 16/03/2021)",
+                  "explanation": "Força de pré-carregamento: Força pré-existente ao apertar o parafuso, antes da aplicação da carga externa na junção. [cite: 69, 70] Condição de travamento automático: Ocorre quando \u03c0 \u22c5 f \u22c5 d_m > L (onde f é coef. atrito, dm é diâmetro médio, L é passo/avanço). Desejável em macacos de carro, para que o carro se mantenha imóvel sem torque aplicado. [cite: 69, 70]"
+                },
+                {
+                  "question": "Questão: Um Parafuso de potência com rosca quadrada tem um diâmetro d = 25mm com passo p = 5mm e rosca simples, n = 1. Uma carga vertical é aplicada no parafuso atingindo um máximo de F = 5kN. Os coeficientes de atrito são 0.06 para o colar e 0.09 para a rosca. O diâmetro friccional do colar é dc = 45mm. (f=0.09 e fc=0.06) a) Encontre a eficiência global e o torque para elevar e baixar a carga. b) Verifique a condição de autobloqueio e caso não for cumprido calcule o parâmetro para que esta condição seja cumprida. (Trabalho 1 - 29/10/2020)",
+                  "explanation": "a) Torque para elevar a carga (TR) = 15,85 Nm. Torque para baixar a carga (TL) = 1,83 Nm. Eficiência global (e) = 25,10%. [cite: 83, 84, 85, 86, 87, 88, 89] b) Condição de autobloqueio: \u03c0 \u22c5 f \u22c5 d_m > l. Calculado: \u03c0 \u22c5 0.09 \u22c5 22.5mm = 6,36 mm. Como 6,36 mm > 5 mm (l), a condição de autobloqueio está satisfeita. [cite: 83, 84, 89]"
                 }
               ]
             },
@@ -701,37 +668,20 @@
               ],
               "questions": [
                 {
-                  "question": "Quais são os tipos de tensões que aparecem nas espiras de uma mola helicoidal quando submetida a cargas de tração ou compressão, e quando submetida a cargas de torção?",
-                  "options": [
-                    "Tração/Compressão: Tensão axial; Torção: Tensão de cisalhamento.",
-                    "Tração/Compressão: Tensão de cisalhamento; Torção: Tensão de dobramento (flexão).",
-                    "Tração/Compressão: Tensão normal; Torção: Tensão axial.",
-                    "Tração/Compressão: Tensão de dobramento; Torção: Tensão normal."
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "Sob carga axial (tração ou compressão), a tensão dominante nas espiras de uma mola helicoidal é de cisalhamento devido à torção do arame. Sob carga de torção aplicada à mola, as espiras são submetidas a dobramento (flexão)."
+                  "question": "Questão 4: Qual é o tipo de tensões que aparecem nas espiras de uma mola helicoidal quando a mesma encontrasse baixo cargas de tração, ou compressão, assim como quando está baixo cargas de torção",
+                  "explanation": "Uma mola helicoidal possui tensão de cisalhamento em suas espiras quando submetida a cargas de tração ou compressão, e tensões normais (axiais ou de flexão, dependendo da geometria e análise) quando submetida a cargas de torção (torção da mola em torno de seu eixo longitudinal). [cite: 4, 24]"
                 },
                 {
-                  "question": "Uma mola helicoidal de compressão tem diâmetro do arame (d) de 5 mm, diâmetro médio da mola (D) de 30 mm, 10 espiras ativas (N_a) e módulo de cisalhamento (G) do material de 80 GPa. Calcule a constante da mola (k).",
-                  "options": [
-                    "185 N/mm",
-                    "234 N/mm",
-                    "150 N/mm",
-                    "200 N/mm"
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "k = G · d⁴ / (8 · D³ · N_a) = (80e3 N/mm²) * (5 mm)⁴ / (8 * (30 mm)³ * 10) ≈ 23.148 N/mm. Opção mais próxima: 234 N/mm."
+                  "question": "Questão 3: Qual é o tipo de tensões que aparecem nas espiras de uma mola helicoidal quando a mesma encontrasse baixo cargas de tração compressão e quando submetida a cargas de torção, explique sobre um desenho. (Prova Final - 24/11/2020)",
+                  "explanation": "Sob cargas de tração ou compressão axial, as espiras de uma mola helicoidal estão primariamente sujeitas a tensões de cisalhamento devido à torção do arame. [cite: 13, 24] Quando a mola como um todo é submetida a um torque em torno de seu eixo longitudinal, as espiras experimentam principalmente tensões normais (de flexão e axiais). [cite: 13, 24]"
                 },
                 {
-                  "question": "Com a tensão de cisalhamento nominal (τ) igual a 60 MPa e o índice da mola (C) igual a 5, calcule a tensão de cisalhamento máxima (τ_max).",
-                  "options": [
-                    "85 MPa",
-                    "60 MPa",
-                    "120 MPa",
-                    "75 MPa"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "Primeiro, calcule o fator de correção de Wahl (K_w) para C=5: K_w = ((4*5 + 2) / (4*5 - 3)) + 0.615 / 5 ≈ 1.417. Agora, calcule a tensão de cisalhamento máxima (τ_max): τ_max = K_w · τ = 1.417 · 60 MPa ≈ 85.02 MPa. A opção mais próxima é 85 MPa."
+                  "question": "Questão 1: Seja uma mola de compressão com extremidades esquadrejadas e esmerilhadas feita com arame de diâmetro 1 mm, diâmetro da mola D=10 mm e 12 espiras, G=80.8 GPa, gamma=76 kN/m³ Encontre os valores da constante de mola, índice de mola, frequência natural da mola e enumere as principais propriedades que a liga de uma mola deve ter, lembrando que: k=(d⁴G)/(8D³Nₐ) fn=(1/(π.d)).√(k.g/D.Nₐ.γ) (Proficiência - 04/05/2021)",
+                  "explanation": "Constante da mola (k) = 1.01 kN/m. [cite: 34, 43, 44] Índice de mola (C) = 10. [cite: 34, 42, 44] Frequência natural (fn) = 366,95 Hz. [cite: 34, 43, 44] Principais propriedades da liga de uma mola: alta resistência à tração, alto ponto de escoamento, baixo módulo de elasticidade (para máximo armazenamento de energia), boa vida em fadiga. [cite: 34, 44, 45]"
+                },
+                {
+                  "question": "Questão 3: Quais são as tensões que aparecem nas espiras de uma mola helicoidal quando a mesma encontrasse baixo cargas de tração e quando encontrasse baixo cargas de torção, explique sobre um desenho. (Prova I - 16/03/2021)",
+                  "explanation": "Sob cargas de tração/compressão axial, as tensões predominantes nas espiras de uma mola helicoidal são de cisalhamento (devido à torção do arame e cisalhamento direto). Sob cargas de torção aplicadas ao longo do eixo da mola, as tensões predominantes são normais (flexão). [cite: 71]"
                 }
               ]
             },
@@ -752,190 +702,16 @@
               ],
               "questions": [
                 {
-                  "question": "Defina a vida L₁₀ de um mancal de rolamento e cite dois exemplos de falha de mancais.",
-                  "options": [
-                    "Vida L₁₀: tempo de operação até a primeira falha. Falhas: Desgaste abrasivo, Corrosão.",
-                    "Vida L₁₀: número de ciclos para 50% de probabilidade de falha. Falhas: Engripamento, Fratura do anel.",
-                    "Vida L₁₀: número de ciclos para 90% de confiabilidade (10% de probabilidade de falha). Falhas: Fadiga de contato (pitting), Desalinhamento estático (causando vibração).",
-                    "Vida L₁₀: capacidade de carga estática. Falhas: Contaminação por sujeira, Lubrificação excessiva."
-                  ],
-                  "correctAnswer": 2,
-                  "explanation": "A vida L₁₀ é o número de ciclos que 90% de um grande grupo de mancais idênticos irá atingir ou exceder antes que a fadiga de contato (pitting) ocorra. Exemplos de falha incluem fadiga de contato, desalinhamento, contaminação, lubrificação inadequada, etc."
+                  "question": "Questão 5: Defina vida L10 de um mancal e de dois exemplos de falha de mancais e como este podem ser detectados.",
+                  "explanation": "Vida L10 (ou vida nominal) de um mancal de rolamento é o número total de revoluções (ou horas a uma dada velocidade constante) que 90% de um grupo aparentemente idêntico de mancais operando sob as mesmas condições atingirá ou excederá antes que o primeiro sinal de fadiga do material ocorra. Apresenta probabilidade de 10% de falha por fadiga. [cite: 5, 6, 7] Exemplos de falha de mancais: desalinhamento estático (detectado por vibração excessiva, ruído, aumento de temperatura) e passagem de corrente elétrica através do rolamento (detectado por danos visíveis nas pistas e esferas/rolos, ruído, aumento de temperatura). [cite: 5, 7]"
                 },
                 {
-                  "question": "Um rolamento de esferas tem capacidade dinâmica básica (C₁₀) de 20 kN e está sujeito a uma carga equivalente aplicada (P) de 5 kN. Considerando um fator de confiabilidade (K_R) de 1, estime a vida básica (L₁₀) em milhões de ciclos.",
-                  "options": [
-                    "64 milhões de ciclos",
-                    "128 milhões de ciclos",
-                    "32 milhões de ciclos",
-                    "256 milhões de ciclos"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "Para rolamentos de esferas, o expoente (a) é 3. L₁₀ = K_R · (C₁₀ / P)³ = 1 · (20 kN / 5 kN)³ = (4)³ = 64 milhões de ciclos."
+                  "question": "Questão 4: Seja o eixo mostrado na figura a seguir com com cargas aplicadas, P2 = 1000 lbf e P1 é 40% de P2. Seja a = 16in, b = 18in e L = 20 in. Selecione o mancal de esferas apropriado da tabela adjunta para suportar as cargas P1 e P2 para pelo menos LD = 500 milhões de ciclos a 1200 rpm na posição mais exigida do eixo e considerando 10% de taxa de falha e KR = 1. Calcule vida L10. (Prova I - 16/03/2021)",
+                  "explanation": "Reação mais exigida (R2) = 1466,04 lbf. Capacidade de carga dinâmica requerida (C) = 11630,47 lbf. Mancal selecionado da tabela: #6311 (com C = 12900 lb). Vida L10 calculada para o mancal #6311 sob carga R2: 680,4 milhões de revoluções. [cite: 72, 73]"
                 },
                 {
-                  "question": "Um mancal de deslizamento tem diâmetro do eixo (d) de 25 mm, diâmetro do furo (D_furo) de 25.04 mm e comprimento (L) igual ao diâmetro (L/d = 1). A carga (W) é de 1.25 kN e a velocidade de rotação (n) é 1200 rpm. A viscosidade absoluta (μ) do óleo é 50 mPa·s. Calcule a folga radial (c) e a carga por unidade de área projetada (P_m).",
-                  "options": [
-                    "c = 0.02 mm, P_m = 2 MPa",
-                    "c = 0.04 mm, P_m = 2 MPa",
-                    "c = 0.02 mm, P_m = 4 MPa",
-                    "c = 0.04 mm, P_m = 4 MPa"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "Folga radial (c) = (D_furo - D_eixo) / 2 = (25.04 mm - 25 mm) / 2 = 0.02 mm. Carga por unidade de área projetada (P_m) = W / (L · d) = 1.25e3 N / (0.025 m · 0.025 m) = 2e6 Pa = 2 MPa."
-                }
-              ]
-            },
-            {
-              "id": "engrenagens",
-              "title": "Engrenagens",
-              "summary": "Engrenagens transmitem potência e movimento rotacional entre eixos. O projeto envolve definir a geometria dos dentes e calcular as forças transmitidas.\n\nConceitos e Fórmulas Essenciais:\n- Módulo (m) = Diâmetro primitivo (d) / Número de dentes (N) (em mm)\n- Passo diametral (P_d) = Número de dentes (N) / Diâmetro primitivo (d) (em polegadas⁻¹)\n- Passo circular (p) = π · m = π · d / N\n- Relação de velocidade = Velocidade de entrada / Velocidade de saída = Número de dentes da engrenagem movida / Número de dentes da engrenagem motora\n- Torque (T) = Potência (H) / Velocidade angular (ω) (ω em rad/s)\n- Velocidade angular (ω) = Velocidade de rotação (n) · 2π / 60 (n em rpm)\n- Força tangencial (W_t) = Torque (T) / Raio primitivo (r) = 2 · T / d\n- Força radial (W_r) = W_t · tan(Ângulo de pressão (φ))\n- Para engrenagens helicoidais: Ângulo da hélice (ψ), Módulo normal (m_n), Módulo transversal (m_t), Ângulo de pressão normal (φ_n), Ângulo de pressão transversal (φ_t). Relações entre parâmetros normais e transversais (e.g., m_t = m_n / cosψ, tanφ_t = tanφ_n / cosψ). Força axial (W_a) = W_t · tanψ.",
-              "tips": [
-                "Identifique se as engrenagens são retas ou helicoidais, pois as fórmulas para forças e geometria mudam.",
-                "Converta a potência para Watts (W) e a velocidade para radianos por segundo (rad/s) antes de calcular o torque.",
-                "Lembre-se que a força tangencial (W_t) é a força que realmente transmite o torque, enquanto a força radial (W_r) atua na direção do centro da engrenagem.",
-                "Para trens de engrenagens, calcule a relação de velocidade geral multiplicando as relações de velocidade de cada par de engrenagens."
-              ],
-              "warnings": [
-                "Não confunda módulo (m) com passo diametral (P_d); eles são inversos e usam unidades diferentes.",
-                "Preste atenção se o ângulo de pressão (φ) fornecido é o normal ou o transversal para engrenagens helicoidais.",
-                "A direção da força axial (W_a) em engrenagens helicoidais depende do sentido de rotação e da mão da hélice."
-              ],
-              "questions": [
-                {
-                  "question": "Defina módulo (m) e passo diametral (P_d) para engrenagens retas e explique a diferença entre eles.",
-                  "options": [
-                    "Módulo: d/N (mm); Passo diametral: N/d (in⁻¹). O módulo é a razão entre o diâmetro primitivo e o número de dentes, usado em sistemas métricos. O passo diametral é o inverso, usado em sistemas imperiais.",
-                    "Módulo: N/d (in⁻¹); Passo diametral: d/N (mm). O módulo é o inverso do passo diametral.",
-                    "Módulo: πd/N (mm); Passo diametral: N/πd (in⁻¹). Ambos são medidas do espaçamento dos dentes.",
-                    "Módulo: d·N (mm); Passo diametral: d/N (in⁻¹). O módulo relaciona diâmetro e número de dentes de forma direta, o passo diametral de forma inversa."
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "Módulo (m) é a razão entre o diâmetro primitivo (d) e o número de dentes (N), usado em sistemas métricos (mm). Passo diametral (P_d) é a razão entre o número de dentes (N) e o diâmetro primitivo (d), usado em sistemas imperiais (in⁻¹). Eles representam o tamanho dos dentes, mas são inversos e usam unidades diferentes."
-                },
-                {
-                  "question": "Um pinhão com 20 dentes e módulo (m) de 4 mm gira a 1750 rpm e aciona uma engrenagem com 50 dentes. Calcule a velocidade de rotação da engrenagem movida em rpm.",
-                  "options": [
-                    "700 rpm",
-                    "350 rpm",
-                    "875 rpm",
-                    "500 rpm"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "A relação de velocidade é inversamente proporcional ao número de dentes: n_movida / n_motora = N_motora / N_movida. n_movida = n_motora · (N_motora / N_movida) = 1750 rpm · (20 / 50) = 700 rpm."
-                },
-                {
-                  "question": "Uma engrenagem transmite 150 kW de potência girando a 1800 rpm. O diâmetro primitivo (d) da engrenagem no ponto de engrenamento é 200 mm. Calcule a força tangencial (W_t) transmitida em kN, usando a fórmula W_t = 60000 · Potência (H) / (π · diâmetro primitivo (d) · velocidade de rotação (n)), onde H em kW, d em mm, n em rpm e W_t em kN.",
-                  "options": [
-                    "7.96 kN",
-                    "15.92 kN",
-                    "3.98 kN",
-                    "10.00 kN"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "W_t = 60000 · H / (π · d · n) = 60000 · 150 kW / (π · 200 mm · 1800 rpm) ≈ 7.96 kN."
-                }
-              ]
-            },
-            {
-              "id": "embreagens-freios",
-              "title": "Embreagens e Freios",
-              "summary": "Embreagens conectam ou desconectam a transmissão de potência, enquanto freios absorvem energia para reduzir a velocidade ou parar um movimento. O projeto envolve analisar o atrito, a pressão de contato e o torque transmitido ou absorvido.\n\nConceitos e Fórmulas Essenciais (Freio de Banda):\n- Relação entre as tensões na banda: Tensão no lado esticado (T₁) / Tensão no lado frouxo (T₂) = e^(coeficiente de atrito (f) · ângulo de contato (φ)) (φ em radianos)\n- Torque de frenagem (T_f) = (T₁ - T₂) · Raio do tambor (R)\n- Pressão máxima (p_max) em um freio de banda simples (pivô fixo): p_max = T₁ / (largura da banda (b) · Raio do tambor (R)) (Esta é uma aproximação, a pressão não é uniforme)\n- Potência dissipada = Torque de frenagem (T_f) · Velocidade angular (ω)",
-              "tips": [
-                "Identifique o tipo de embreagem ou freio para aplicar as fórmulas corretas (e.g., disco, banda).",
-                "Para freios de banda, calcule o ângulo de contato (φ) em radianos.",
-                "A relação T₁/T₂ é fundamental para resolver problemas de freios de banda.",
-                "O torque de frenagem é a diferença entre as tensões da banda multiplicada pelo raio do tambor."
-              ],
-              "warnings": [
-                "Certifique-se de que o ângulo de contato (φ) está em radianos ao usar a fórmula T₁/T₂.",
-                "A fórmula de pressão máxima para freios de banda simples é uma simplificação; a distribuição real de pressão é complexa.",
-                "A potência dissipada em um freio é a energia removida do sistema por unidade de tempo."
-              ],
-              "questions": [
-                {
-                  "question": "Descreva dois tipos de embreagens e suas principais características.",
-                  "options": [
-                    "Embreagem de garras: acoplamento suave, transmite alto torque. Embreagem eletromagnética: usa fluido viscoso, acoplamento rápido.",
-                    "Embreagem de disco (seca): usa atrito entre discos, acoplamento gradual, comum em carros. Embreagem centrífuga: acopla automaticamente com a velocidade, comum em ciclomotores.",
-                    "Embreagem hidráulica: usa pressão de óleo, acoplamento rígido. Embreagem a pó magnético: usa partículas metálicas, acoplamento instantâneo.",
-                    "Embreagem de cone: usa engrenagens cônicas, acoplamento preciso. Embreagem de lâminas múltiplas: usa molas, acoplamento lento."
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "Embreagens de disco (secas ou banhadas em óleo) usam o atrito entre superfícies para transmitir torque e são comuns em veículos. Embreagens centrífugas usam a força centrífuga para engatar com o aumento da velocidade, encontradas em equipamentos como ciclomotores e cortadores de grama."
-                },
-                {
-                  "question": "Em um freio de banda, o ângulo de contato (φ) é 270° e o coeficiente de atrito (f) entre a banda e o tambor é 0.25. Calcule a relação entre as tensões na banda (T₁/T₂).",
-                  "options": [
-                    "e^(0.25 · 270)",
-                    "e^(0.25 · 3π/2)",
-                    "e^(0.25 · 1.5)",
-                    "e^(0.25 · 2π)"
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "O ângulo de contato (φ) deve estar em radianos. 270° = 3π/2 rad. A relação T₁/T₂ = e^(f · φ) = e^(0.25 · 3π/2)."
-                },
-                {
-                  "question": "Um freio de banda tem um tambor com diâmetro de 400 mm. O ângulo de contato (φ) é 270° e o coeficiente de atrito (f) é 0.2. Se a tensão no lado frouxo (T₂) da banda é 2.56 kN, calcule o torque de frenagem (T_f).",
-                  "options": [
-                    "0.8 kNm",
-                    "1.2 kNm",
-                    "1.6 kNm",
-                    "2.0 kNm"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "Primeiro, calcule a relação entre as tensões: T₁/T₂ = e^(f · φ). O ângulo de contato em radianos é 270° = 3π/2 rad. T₁/T₂ = e^(0.2 · 3π/2) ≈ e^0.942 ≈ 2.56. T₁ = 2.56 · T₂ = 2.56 · 2.56 kN ≈ 6.55 kN. O raio do tambor (R) é 400 mm / 2 = 200 mm = 0.2 m. O torque de frenagem (T_f) = (T₁ - T₂) · R = (6.55 kN - 2.56 kN) · 0.2 m ≈ 0.8 kNm."
-                }
-              ]
-            },
-            {
-              "id": "correias-correntes",
-              "title": "Correias e Correntes",
-              "summary": "Correias e correntes são elementos flexíveis usados para transmitir potência entre eixos. Correias utilizam atrito, enquanto correntes utilizam engrenamento com rodas dentadas.\n\nConceitos Essenciais:\n- Correias: Vantagens (operação suave, absorção de choque, baixo custo, flexibilidade), Desvantagens (escorregamento, menor eficiência que engrenagens/correntes, vida útil limitada pela fadiga/desgaste). Tipos: V, plana, sincronizada (dentada).\n- Correntes: Vantagens (sem escorregamento, alta eficiência, maior capacidade de carga que correias em alguns casos), Desvantagens (ruído, lubrificação necessária, chordal action, necessidade de alinhamento preciso). Tipos: rolos, dentes, silenciosa.\n- Relação de velocidade: Inversamente proporcional aos diâmetros das polias (correias) ou número de dentes das rodas dentadas (correntes).\n- Potência transmitida = Torque · Velocidade angular.",
-              "tips": [
-                "Entenda as características de cada tipo de correia e corrente e suas aplicações típicas.",
-                "Para correias, o escorregamento é um fator importante a considerar na eficiência.",
-                "Para correntes, o 'chordal action' causa variações na velocidade angular e vibração.",
-                "A potência que pode ser transmitida depende do tipo e tamanho da correia/corrente, da velocidade e do número de dentes/diâmetro das polias/rodas dentadas."
-              ],
-              "warnings": [
-                "Correias requerem tensão inicial adequada para evitar escorregamento excessivo.",
-                "Correntes requerem lubrificação regular para minimizar desgaste e ruído.",
-                "O desalinhamento pode reduzir significativamente a vida útil de correias e correntes."
-              ],
-              "questions": [
-                {
-                  "question": "Apresente duas vantagens e duas desvantagens das correias para transmitir potência.",
-                  "options": [
-                    "Vantagens: Alta eficiência, sem escorregamento. Desvantagens: Alto custo, ruído.",
-                    "Vantagens: Operação suave, baixo custo. Desvantagens: Escorregamento, vida útil limitada.",
-                    "Vantagens: Alta capacidade de carga, lubrificação desnecessária. Desvantagens: Peso elevado, instalação complexa.",
-                    "Vantagens: Sem necessidade de tensão inicial, compactas. Desvantagens: Sensíveis à temperatura, difícil manutenção."
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "Vantagens das correias incluem operação suave, absorção de choques e baixo custo inicial. Desvantagens incluem escorregamento (exceto sincronizadas) e vida útil limitada por desgaste e fadiga."
-                },
-                {
-                  "question": "Qual a principal vantagem das correias sincronizadas (dentadas) em comparação com as correias V ou planas?",
-                  "options": [
-                    "Maior capacidade de absorção de choque.",
-                    "Permitem escorregamento controlado para proteção contra sobrecarga.",
-                    "Transmitem potência sem escorregamento, mantendo uma relação de velocidade constante.",
-                    "Requerem menor tensão inicial para transmitir torque."
-                  ],
-                  "correctAnswer": 2,
-                  "explanation": "Correias sincronizadas possuem dentes que engrenam com rodas dentadas, eliminando o escorregamento e garantindo uma relação de velocidade precisa e constante, o que é essencial em aplicações de sincronismo."
-                },
-                {
-                  "question": "Uma corrente de rolos é usada para transmitir potência de uma roda dentada motora com 15 dentes para uma roda dentada movida com 45 dentes. Se a roda motora gira a 900 rpm, qual a velocidade da roda movida em rpm?",
-                  "options": [
-                    "300 rpm",
-                    "450 rpm",
-                    "900 rpm",
-                    "150 rpm"
-                  ],
-                  "correctAnswer": 0,
-                  "explanation": "A relação de velocidade é inversamente proporcional ao número de dentes: n_movida / n_motora = N_motora / N_movida. n_movida = n_motora · (N_motora / N_movida) = 900 rpm · (15 / 45) = 300 rpm."
+                  "question": "Questão 5: Apresente as vantagens dos mancais de deslizamento frente aos de rolamento e explique duas formas de lubrificação deste tipo de mancais. (Prova I - 16/03/2021)",
+                  "explanation": "Vantagens dos mancais de deslizamento: Menor custo, permitem ajustamento, maior vida útil (em certas condições), maior capacidade de amortecimento, menor espaço radial, menos propensos a falhas por fadiga (em alguns casos). [cite: 74] Duas formas de lubrificação: 1. Lubrificação de filme completo (hidrodinâmica): As superfícies metálicas são completamente separadas por um filme de lubrificante. 2. Lubrificação de contorno (limite): Há contato parcial entre as superfícies, com uma fina camada de lubrificante. [cite: 74]"
                 }
               ]
             },
@@ -956,37 +732,162 @@
               ],
               "questions": [
                 {
-                  "question": "Quais são os dois tipos principais de tensões que um eixo rotativo está sujeito ao transmitir torque e suportar cargas transversais?",
-                  "options": [
-                    "Tensão de tração e tensão de compressão.",
-                    "Tensão normal (devido à flexão) e tensão de cisalhamento (devido à torção).",
-                    "Tensão de escoamento e tensão última.",
-                    "Tensão residual e tensão térmica."
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "Um eixo rotativo que transmite torque está sujeito a tensões de cisalhamento devido à torção. Se ele também suporta cargas transversais (como de engrenagens ou polias), ele está sujeito a momentos fletor, que causam tensões normais (tração e compressão)."
+                  "question": "Questão 2: Descreva a função das chavetas, das estrias e cite as principais características de ambas assim como apresente um exemplo de aplicação para cada tipo. (Proficiência - 04/05/2021)",
+                  "explanation": "Chavetas: Função: Fixar elementos a eixos para transmitir torque ou prender axialmente. Características: Elementos prismáticos inseridos em rasgos no eixo e no cubo. Exemplo: Flanges de árvores de natal molhada (equipamento submarino) para suportar esforços torcionais. [cite: 34, 46, 47, 48] Estrias: Função: Transmitir torque, similar às chavetas, mas com maior capacidade. Características: Múltiplas chavetas formadas integralmente no eixo e no cubo. Vantagens: Carregamento individual menor por estria, melhor vida em fadiga. Exemplo: Caixa de transmissão de automóveis, juntas homocinéticas. [cite: 34, 49, 50, 51]"
                 },
                 {
-                  "question": "Um eixo circular sólido com diâmetro (d) de 50 mm está sujeito a um torque (T) de 1 kNm e um momento fletor (M) de 1.5 kNm em uma seção crítica. Calcule a tensão de cisalhamento máxima (τ_max) devido à torção nesta seção.",
-                  "options": [
-                    "81.5 MPa",
-                    "40.7 MPa",
-                    "122.2 MPa",
-                    "61.1 MPa"
-                  ],
-                  "correctAnswer": 1,
-                  "explanation": "O momento de inércia polar (J) para uma seção circular sólida é J = πd⁴/32. J = π · (0.05 m)⁴ / 32 ≈ 6.135e-7 m⁴. A tensão de cisalhamento máxima (τ_max) devido à torção é τ_max = T · (d/2) / J = (1000 Nm) · (0.05 m / 2) / (6.135e-7 m⁴) ≈ 40.75 MPa. A opção mais próxima é 40.7 MPa."
+                  "question": "Questão 4: Seja o eixo mostrado na figura a seguir com com cargas aplicadas, P2 = 1000 lbf e P1 é 40% de P2. Seja a = 16in, b = 18in e L = 20 in. Selecione o mancal de esferas apropriado da tabela adjunta para suportar as cargas P1 e P2 para pelo menos LD = 500 milhões de ciclos a 1200 rpm na posição mais exigida do eixo e considerando 10% de taxa de falha e KR = 1. Calcule vida L10.<img>/src/data/img/img_q4_eixos.png</img>(Prova I - 16/03/2021)",
+                  "explanation": "Reação mais exigida (R2) = 1466,04 lbf. Capacidade de carga dinâmica requerida (C) = 11630,47 lbf. Mancal selecionado da tabela: #6311 (com C = 12900 lb). Vida L10 calculada para o mancal #6311 sob carga R2: 680,4 milhões de revoluções. [cite: 72, 73]"
                 },
                 {
-                  "question": "Para o eixo da questão anterior, calcule a tensão normal máxima (σ_max) devido ao momento fletor (M) de 1.5 kNm nesta seção.",
-                  "options": [
-                    "81.5 MPa",
-                    "40.7 MPa",
-                    "122.2 MPa",
-                    "61.1 MPa"
-                  ],
-                  "correctAnswer": 2,
-                  "explanation": "O momento de inércia de área (I) para uma seção circular sólida é I = πd⁴/64 = J/2 ≈ 3.0675e-7 m⁴. A tensão normal máxima (σ_max) devido à flexão é σ_max = M · (d/2) / I = (1500 Nm) · (0.05 m / 2) / (3.0675e-7 m⁴) ≈ 122.3 MPa. A opção mais próxima é 122.2 MPa."
+                  "question": "10. A figura a seguir mostra um eixo rotativo simplesmente apoiado em mancais de esferas em A e D carregado por uma força F de 6800N junto ao seu diagrama de momento fletor. Considerando um A¸co A1050 estirado a frio para sua construção calcule a vida da peça se esta opera a 1000 rpm. (Lista 2 - Eixos)",
+                  "explanation": "Material: Aço 1050 Estirado a Frio (Sut = 690 MPa, Sy = 580 MPa). Limite de resistência à fadiga corrigido (Se) = 236 MPa. Tensão alternada no ponto crítico (σ_a) = 335,1 MPa (considerando Kf = 1.55 e M_B = 695.5 Nm). Vida da peça (N) = 68.000 ciclos. Vida em tempo = 68 minutos a 1000 rpm. [cite: 109, 110]"
+                }
+              ]
+            },
+            {
+              "id": "engrenagens",
+              "title": "Engrenagens",
+              "summary": "Engrenagens transmitem potência e movimento rotacional entre eixos. O projeto envolve definir a geometria dos dentes e calcular as forças transmitidas.\n\nConceitos e Fórmulas Essenciais:\n- Módulo (m) = Diâmetro primitivo (d) / Número de dentes (N) (em mm)\n- Passo diametral (P_d) = Número de dentes (N) / Diâmetro primitivo (d) (em polegadas⁻¹)\n- Passo circular (p) = π · m = π · d / N\n- Relação de velocidade = Velocidade de entrada / Velocidade de saída = Número de dentes da engrenagem movida / Número de dentes da engrenagem motora\n- Torque (T) = Potência (H) / Velocidade angular (ω) (ω em rad/s)\n- Velocidade angular (ω) = Velocidade de rotação (n) · 2π / 60 (n em rpm)\n- Força tangencial (W_t) = Torque (T) / Raio primitivo (r) = 2 · T / d\n- Força radial (W_r) = W_t · tan(Ângulo de pressão (φ))\n- Para engrenagens helicoidais: Ângulo da hélice (ψ), Módulo normal (m_n), Módulo transversal (m_t), Ângulo de pressão normal (φ_n), Ângulo de pressão transversal (φ_t). Relações entre parâmetros normais e transversais (e.g., m_t = m_n / cosψ, tanφ_t = tanφ_n / cosψ). Força axial (W_a) = W_t · tanψ.",
+              "tips": [
+                "Identifique se as engrenagens são retas ou helicoidais, pois as fórmulas para forças e geometria mudam.",
+                "Converta a potência para Watts (W) e a velocidade para radianos por segundo (rad/s) antes de calcular o torque.",
+                "Lembre-se que a força tangencial (W_t) é a força que realmente transmite o torque, enquanto a força radial (W_r) atua na direção do centro da engrenagem.",
+                "Para trens de engrenagens, calcule a relação de velocidade geral multiplicando as relações de velocidade de cada par de engrenagens."
+              ],
+              "warnings": [
+                "Não confunda módulo (m) com passo diametral (P_d); eles são inversos e usam unidades diferentes.",
+                "Preste atenção se o ângulo de pressão (φ) fornecido é o normal ou o transversal para engrenagens helicoidais.",
+                "A direção da força axial (W_a) em engrenagens helicoidais depende do sentido de rotação e da mão da hélice."
+              ],
+              "questions": [
+                {
+                  "question": "Questão 6: Apresente duas vantagens das engrenagens retas sobre as helicoidais e vice-versa",
+                  "explanation": "Vantagens das engrenagens retas sobre as helicoidais: 1. Menor custo de fabricação (são mais simples de projetar e fabricar). 2. Não geram cargas axiais (de empuxo). Vantagens das engrenagens helicoidais sobre as retas: 1. Operação mais suave e silenciosa (devido ao engrenamento gradual dos dentes). 2. Maior capacidade de transmissão de carga (para o mesmo tamanho, devido ao contato mais distribuído). [cite: 7, 25, 26, 27]"
+                },
+                {
+                  "question": "Questão 4: Apresente as principais vantagens das engrenagens retas sobre as helicoidais e logo das engrenagens as helicoidais sobre as retas, indique na figura a seguir os principais parâmetros que definem geometria de uma engrenagem.<img>/src/data/img/img_q4_engrenagens.png</img>(Prova Final - 24/11/2020)",
+                  "explanation": "Vantagens das engrenagens retas sobre helicoidais: Mais simples e baratas de fabricar; não produzem empuxo axial. [cite: 14, 25, 26] Vantagens das engrenagens helicoidais sobre retas: Operação mais suave e silenciosa; maior capacidade de carga e contato entre dentes. [cite: 14, 26, 27] Parâmetros geométricos de uma engrenagem (indicados na figura): A: Dedendo, B: Largura do vão, C: Passo circular de referência, D: Espessura do dente, E: Adendo. [cite: 14, 28]"
+                },
+                {
+                  "question": "Questão 3: No trem de engrenagens da figura, a engrenagem 6 gira a 85 RPM no sentido anti-horário enquanto a engrenagem 2 é mantida fixa. Calcule a velocidade e sentido de giro do braço 3 desse engrenagem planetário.<img>/src/data/img/img_q3_engrenagens.png</img>(Proficiência - 04/05/2021)",
+                  "explanation": "NA"
+                },
+                {
+                  "question": "Questão 1: Defina os principais paramentos que descrevem a geometria de uma engrenagem reta. Apresente duas vantagens das engrenagens retas sobre as helicoidais e duas vantagens das engrenagens helicoidais sobre a retas (Prova II - 27/04/2021)",
+                  "explanation": "Parâmetros geométricos: Número de dentes, circunferência de referência (primitiva), circunferência de base, passo circular. [cite: 58, 59] Vantagens retas sobre helicoidais: Fabricação mais simples e barata, não geram empuxo axial. [cite: 58, 59] Vantagens helicoidais sobre retas: Operação mais silenciosa, permitem acoplamento com eixos cruzados (não paralelos). [cite: 58, 59]"
+                },
+                {
+                  "question": "Questão 3: Uma caixa redutora é composta por engrenagens de modulo de 12 mm e angulo de press˜ao 20o . O pinh˜ao 2 gira com velocidade de 1800 rpm no sentido horário e transmite uma potência de 150 kW para a engrenagem livre 5 atrav´es das engrenagens 3 e 4 fixas ao eixo b. Para estes dados, calcule o torque e as componentes radial e tangencial da for¸ca transmitida ao eixo c e. (Lembrar que: Wr = Wttan(φ), Wt = 60000H / π.d.n) (Prova II - 27/04/2021)",
+                  "explanation": "Considerando a transmissão da engrenagem 4 para a 5 (no eixo c): Força tangencial (Ft_45) = 13,10 kN. Força radial (Fr_45) = 4,77 kN. O torque transmitido ao eixo c pela engrenagem 5 é T5 = Ft_45 * (d5/2). Com d5 = N5*m = 48*12 = 576mm, T5 = 13.10 * (0.576/2) = 3.77 kNm (Torque no eixo c é o torque na engrenagem 5). (Resultados baseados nas forças na engrenagem 4 que engrena com a 5. O torque no eixo 'c' será o torque na engrenagem 5: T_c = F_t45 * (d5/2) = 13.10 kN * (48*12mm/2) /1000 = 13.10 * 0.288 = 3.77 kNm). A questão pede torque e componentes da força transmitida ao eixo c. As componentes da força são as exercidas pela engrenagem 4 sobre a 5 (e vice-versa). O torque no eixo c é o que a engrenagem 5 recebe."
+                },
+                {
+                  "question": "Questão: O trem de engrenagens mostrado na figura têm um módulo de 12 mm e um ângulo de pressão 20º. Se o pinhão 2 (vermelho) gira a 1800 rpm no sentido horário e transmite 150 kW para a engrenagem livre 5 (azul) de eixo e através do engrenagem verde 3 e 4, calcular quais são forças que essas engrenagens, 3 e 4, transmitem ao eixo livre e ? Obs: Lembrar que Wt = 60000H / πdn onde, Wt = carga transmitida cm kN H = potencia. kW d=diâmetro do engrenamento, mm n = velocidade cm rpm (Trabalho 2 - 19/11/2020)",
+                  "explanation": "As forças que a engrenagem 4 (no mesmo eixo que a 3) transmite para a engrenagem 5 (no eixo livre 'c' ou 'e') são: Força tangencial (Ft_45) = 13,10 kN. Força radial (Fr_45) = 4,77 kN. [cite: 77, 78, 79, 80, 81, 82]"
+                },
+                {
+                  "question": "1. Um pinhão cilíndrico com 17 dentes e passo diametral igual a 8 roda a 1120 rpm e aciona uma coroa 544 rpm. Encontre o numero de dentes da coroa e a distˆancia te´orica entre centros. (Lista 2 - Engrenagens)",
+                  "explanation": "Número de dentes da coroa (Na) = 35 dentes. Distância teórica entre centros (C) = 3,25 polegadas. [cite: 90, 91]"
+                },
+                {
+                  "question": "2. Um pinhão cilíndrico com 15 dentes retos possui modulo 3 e roda a 1600 rpm. Se a coroa possui 60 dentes, encontre a velocidade da engrenagem accionada, o passo circular e a distância teórica entre centros. (Lista 2 - Engrenagens)",
+                  "explanation": "Velocidade da engrenagem acionada (coroa) = 400 rpm. Passo circular (P) = 3π mm (aproximadamente 9,42 mm). Distância teórica entre centros (C) = 112,5 mm. [cite: 92, 93]"
+                },
+                {
+                  "question": "3. Um par de engrenagens helicoidais paralelas composta por um pinh˜ao de 19 dentes e uma coroa de 57 dentes. Se o pinhão possui uma hélice com ângulo de 20 graus, ângulo de pressão normal de 30 graus e módulo 2, 5mm. Encontre a. Os passos circulares normal, transversal e axial b. O passo diametral transversal e o ângulo de pressão transversal c. O Adendo, o Dedendo e o diâmetro primitivo de cada engrenagem (Lista 2 - Engrenagens)",
+                  "explanation": "a. Passo circular normal (Pn) = 7,854 mm. Passo circular transversal (Pt) = 9,068 mm (corrigido de 8,358mm, usando Pn/cos(20)). Passo circular axial (Px) = 15,71 mm (usando Pt/tan(30) conforme gabarito, embora Px = Pt/tan(20) = 24.91mm ou Pn/sin(20)=22.96mm seriam mais comuns). [cite: 94, 95, 96] b. Módulo transversal (mt) = 2,88 mm (calculado como mn/cos(20), não passo diametral). Ângulo de pressão transversal (φt) = 22,8°. [cite: 94, 95, 96] c. Adendo (a) = 2,5 mm. Dedendo (b) = 3,125 mm. Diâmetro primitivo do pinhão = 54,65 mm. Diâmetro primitivo da coroa = 164,0 mm. [cite: 94, 95, 97]"
+                },
+                {
+                  "question": "4. O eixo da figura a seguir roda a 600 rpm, encontre a velocidade de sa´ıda do trem de engrenagens (Lista 2 - Engrenagens)",
+                  "explanation": "Velocidade de saída do trem de engrenagens = 34 rpm. [cite: 97]"
+                },
+                {
+                  "question": "5. O eixo da polia 2 na figura a seguir roda a 1200 rpm, encontre a velocidade de sa´ıda do trem de engrenagens. (Lista 2 - Engrenagens)",
+                  "explanation": "Velocidade de saída do trem de engrenagens = 11,89 rpm. [cite: 98]"
+                },
+                {
+                  "question": "6. O trem de engrenagens mostrado na figura têm um módulo de 12 mm e um ângulo de pressão 20 graus. Se o pinhão 2 (vermelho) gira a 1800 rpm no sentido horário e transmite 150 kW para a engrenagem livre 5 (azul) de eixo c através da engrenagem verde 3 e 4. Encontre quais são forças que essas engrenagens, 3 e 4, transmitem ao eixo livre c? (Lista 2 - Engrenagens)",
+                  "explanation": "Forças transmitidas pela engrenagem 4 para a engrenagem 5 (no eixo c): Força tangencial (Wt_45) = 13,10 kN. Força radial (Wr_45) = 4,768 kN. [cite: 99, 100]"
+                }
+              ]
+            },
+            {
+              "id": "embreagens-freios",
+              "title": "Embreagens e Freios",
+              "summary": "Embreagens conectam ou desconectam a transmissão de potência, enquanto freios absorvem energia para reduzir a velocidade ou parar um movimento. O projeto envolve analisar o atrito, a pressão de contato e o torque transmitido ou absorvido.\n\nConceitos e Fórmulas Essenciais (Freio de Banda):\n- Relação entre as tensões na banda: Tensão no lado esticado (T₁) / Tensão no lado frouxo (T₂) = e^(coeficiente de atrito (f) · ângulo de contato (φ)) (φ em radianos)\n- Torque de frenagem (T_f) = (T₁ - T₂) · Raio do tambor (R)\n- Pressão máxima (p_max) em um freio de banda simples (pivô fixo): p_max = T₁ / (largura da banda (b) · Raio do tambor (R)) (Esta é uma aproximação, a pressão não é uniforme)\n- Potência dissipada = Torque de frenagem (T_f) · Velocidade angular (ω)",
+              "tips": [
+                "Identifique o tipo de embreagem ou freio para aplicar as fórmulas corretas (e.g., disco, banda).",
+                "Para freios de banda, calcule o ângulo de contato (φ) em radianos.",
+                "A relação T₁/T₂ é fundamental para resolver problemas de freios de banda.",
+                "O torque de frenagem é a diferença entre as tensões da banda multiplicada pelo raio do tambor."
+              ],
+              "warnings": [
+                "Certifique-se de que o ângulo de contato (φ) está em radianos ao usar a fórmula T₁/T₂.",
+                "A fórmula de pressão máxima para freios de banda simples é uma simplificação; a distribuição real de pressão é complexa.",
+                "A potência dissipada em um freio é a energia removida do sistema por unidade de tempo."
+              ],
+              "questions": [
+                {
+                  "question": "Questao 7. Descreva dois tipos de embreagens e suas principais características",
+                  "explanation": "1. Embreagens de atrito (ex: manuais banhadas em óleo): Utilizam a força de atrito entre duas ou mais superfícies pressionadas uma contra a outra para transmitir torque. As banhadas a óleo ajudam a diminuir a temperatura dos componentes. Aplicação: carros, motos. [cite: 7, 28] 2. Embreagens centrífugas: Utilizam a força centrífuga para acoplar/desacoplar. Engatam automaticamente à medida que a velocidade de rotação aumenta. Aplicação: ciclomotores, cortadores de grama, karts. [cite: 7, 29]"
+                },
+                {
+                  "question": "Questão 5: Descreva dois tipos de embreagens e suas principais características, apresente exemplos de aplicação das embreagens descritas. (Prova Final - 24/11/2020)",
+                  "explanation": "1. Embreagens manuais banhadas em óleo: Ajudam a diminuir a temperatura dos componentes e são encontradas em carros e motos. [cite: 15, 28] 2. Embreagens centrífugas: Utilizam a força centrífuga para conectar dois veios concêntricos, engatando mais a velocidades mais elevadas. Encontradas em ciclomotores e cortadores de grama. [cite: 15, 29]"
+                },
+                {
+                  "question": "Questão 2: Descreva dois tipos de embreagens e suas principais caracter´ısticas, apresente um exemplo de aplicação para cada umas das embreagens descritas. (Prova II - 27/04/2021)",
+                  "explanation": "1. Embreagens de atrito: Duas ou mais superfícies são pressionadas para criar torque de atrito. Podem ser secas ou molhadas (ex: embreagem de atrito molhada em transmissões automáticas de carros). [cite: 59] 2. Embreagens de roda livre (catraca): Operam automaticamente segundo a velocidade relativa, permitindo rotação em uma direção e travando na oposta (ex: em bicicletas, permitindo pedalar para frente e deslizar livremente). [cite: 59]"
+                },
+                {
+                  "question": "Questão 4: Um sistema de freio de banda, como o da figura, é composto por um tambor de 400 mm de diâmetro que roda a 200 rpm e a uma banda de b = 75 mm de largura com coeficiente de atrito f = 0.2 e pressão máxima de 480 kPa. Para estes dados encontre, o torque de frenagem, a forçaa P aplicada e a potência em regime estável. (Lembrar que: pressão máxima p = 2P / bD e T1/T2 = e^−fφ) (Prova II - 27/04/2021)",
+                  "explanation": "Torque de frenagem (T) = 878 Nm. Força P aplicada = 2,16 kN. Potência em regime estável (H) = 18,39 kW. (Resultados baseados nos cálculos da folha de resposta). [cite: 63, 64, 65]"
+                },
+                {
+                  "question": "7. A pressão máxima de interface de banda no freio mostrado na figura e de 620 kPa. Se o tambor tem 350 mm de diâmetro, uma largura de banda de 100 mm, um coeficiente de atrito de 0.25 e um ângulo de cobertura de 270 graus. Encontre as tensões na banda e a capacidade de torque (Lista 2 - Freios e Embreagens)",
+                  "explanation": "Tensão máxima na banda (P1) = 10,85 kN. Tensão mínima na banda (P2) = 2,69 kN (conforme gabarito). Capacidade de torque (T) = 1,43 kNm. [cite: 102, 103, 104]"
+                },
+                {
+                  "question": "8. O freio mostrado na figura tem um coeficiente de atrito de 0.3 e é operado usando uma força máxima de 400 kN. Se a largura da banda é de 50 mm, encontre as tensões da banda e o torque de frenagem (Lista 2 - Freios e Embreagens)",
+                  "explanation": "Considerando força de operação F = 400 N (não kN): Tensão P2 (lado frouxo, pela alavanca) = 975 N (conforme gabarito). Tensão P1 (lado tenso) = 3064 N. Torque de frenagem (T) = 209 Nm (corrigido de 2.09 Nm no gabarito). [cite: 104, 105]"
+                }
+              ]
+            },
+            {
+              "id": "correias-correntes",
+              "title": "Correias e Correntes",
+              "summary": "Correias e correntes são elementos flexíveis usados para transmitir potência entre eixos. Correias utilizam atrito, enquanto correntes utilizam engrenamento com rodas dentadas.\n\nConceitos Essenciais:\n- Correias: Vantagens (operação suave, absorção de choque, baixo custo, flexibilidade), Desvantagens (escorregamento, menor eficiência que engrenagens/correntes, vida útil limitada pela fadiga/desgaste). Tipos: V, plana, sincronizada (dentada).\n- Correntes: Vantagens (sem escorregamento, alta eficiência, maior capacidade de carga que correias em alguns casos), Desvantagens (ruído, lubrificação necessária, chordal action, necessidade de alinhamento preciso). Tipos: rolos, dentes, silenciosa.\n- Relação de velocidade: Inversamente proporcional aos diâmetros das polias (correias) ou número de dentes das rodas dentadas (correntes).\n- Potência transmitida = Torque · Velocidade angular.",
+              "tips": [
+                "Entenda as características de cada tipo de correia e corrente e suas aplicações típicas.",
+                "Para correias, o escorregamento é um fator importante a considerar na eficiência.",
+                "Para correntes, o 'chordal action' causa variações na velocidade angular e vibração.",
+                "A potência que pode ser transmitida depende do tipo e tamanho da correia/corrente, da velocidade e do número de dentes/diâmetro das polias/rodas dentadas."
+              ],
+              "warnings": [
+                "Correias requerem tensão inicial adequada para evitar escorregamento excessivo.",
+                "Correntes requerem lubrificação regular para minimizar desgaste e ruído.",
+                "O desalinhamento pode reduzir significativamente a vida útil de correias e correntes."
+              ],
+              "questions": [
+                {
+                  "question": "Questão 8: Descreva as principais vantagens e desvantagens das correias para transmitir potência.",
+                  "explanation": "Vantagens: 1. Baixo custo inicial. 2. Funcionamento silencioso e suave, com capacidade de absorver choques e vibrações. 3. Podem transmitir potência entre eixos com grandes distâncias entre centros. [cite: 7, 8, 30] Desvantagens: 1. Possibilidade de escorregamento, resultando em relação de transmissão não constante (exceto correias sincronizadoras). 2. Vida útil geralmente menor comparada a outros elementos de transmissão como engrenagens. 3. Exigem tensionamento e podem impor cargas radiais significativas nos eixos. [cite: 7, 9, 31, 32]"
+                },
+                {
+                  "question": "Questão 6: Descreva as principais vantagens e desvantagens das correias para transmitir potência motriz, cite exemplos de aplicação. (Prova Final - 24/11/2020)",
+                  "explanation": "Vantagens: Flexíveis e elásticas, viáveis para grandes distâncias entre centros de eixos; simplificam projetos e reduzem custo. [cite: 16, 30] Desvantagens: Elevado desgaste (se de polímeros/tecidos); perda de eficiência por deformação. [cite: 16, 31, 32] Exemplos de aplicação: Câmbio CVT, transmissões diversas, correias de alternador de carros. [cite: 16, 33]"
+                },
+                {
+                  "question": "Questão 5: Descreva as principais propriedades dos cabos de aço assim como as principais técnicas de fabricação dos mesmos. Cite um exemplo de aplicação industrial. (Proficiência - 04/05/2021)",
+                  "explanation": "Principais propriedades: Alta resistência mecânica combinada com grande flexibilidade. [cite: 40, 41, 57] Principal técnica de fabricação: Trefilação (processo a frio onde o fio-máquina, produto da laminação a quente, atravessa uma matriz para obter um arame de menor diâmetro; os arames são então torcidos para formar pernas, e as pernas torcidas para formar o cabo). [cite: 40, 41, 57] Exemplo de aplicação industrial: Sustentação de cargas em guindastes, acionamento de freios de mão e caixas de velocidade na indústria automobilística. [cite: 40, 41, 57]"
+                },
+                {
+                  "question": "Questão 5: Descreva as principais características das correias sincronizados e um exemplo de aplicação de este tipo de correias. (Prova II - 27/04/2021)",
+                  "explanation": "Correias sincronizadoras possuem dentes em sua superfície que se encaixam em ranhuras nas polias, garantindo que não haja deslizamento e que a relação de velocidades seja constante. Exemplo de aplicação: Sincronização de válvulas em motores de carro (comando de válvulas). [cite: 65]"
+                },
+                {
+                  "question": "9. Uma corrente de roletes N60 de fileira dupla é utilizada para transmitir potência entre uma roda dentada motora de 13 dentes rodando a 300 RPM e uma roda dentada movida de 52 dentes. (a) Qual é a potência permissível desta transmissão? (b) Calcule a distância entre centros se o comprimento da corrente é de 82 passos. (e) Calcule o torque e força de flexão aplicados no eixo motor pela corrente, se a potˆencia real transmitida for 30% menor que a potência corrigida (permissível). (Lista 2 - Correntes)",
+                  "explanation": "(a) Potência permissível (Ha) = 7,91 HP (conforme gabarito). [cite: 105, 106] (b) Distância entre centros (C) = 17,96 polegadas (aproximadamente 18 polegadas). [cite: 105, 106] (c) Potência real transmitida (H_real) = 5,54 HP. Torque no eixo motor (T) = 1164 lb.in. Força de flexão (aproximada pela força tangencial na corrente) (F) = 744 lbf. [cite: 105, 107]"
                 }
               ]
             }
