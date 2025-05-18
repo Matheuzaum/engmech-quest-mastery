@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -28,9 +29,11 @@ export default defineConfig(({ mode }) => ({
       output: {
         // Configuração para nomes de arquivos
         assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
+          
           const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];
-          if (/\.(png|jpe?g|gif|webp|svg)$/.test(assetInfo.name)) {
+          if (/\.(png|jpe?g|gif|webp|svg)$/.test(assetInfo.name || '')) {
             return `assets/images/[name]-[hash][extname]`;
           }
           return `assets/[name]-[hash][extname]`;

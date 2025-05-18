@@ -23,10 +23,13 @@ const OptimizedImage = ({
       return imagePath;
     }
     
-    // Handle relative paths from data folder or src
-    if (imagePath.startsWith('/src/data/img/')) {
-      // For images in the src/data/img folder
-      return new URL(imagePath.replace('/src/data/', '../data/'), import.meta.url).href;
+    // Handle image paths that might be from the data folder
+    if (imagePath.includes('img_q3_engrenagens')) {
+      return '/images/engrenagens-q3.webp';
+    } else if (imagePath.includes('img_q4_eixos')) {
+      return '/images/eixos-q4.webp';
+    } else if (imagePath.includes('img_q4_engrenagens')) {
+      return '/images/engrenagens-q4.webp';
     }
     
     // For other images (assuming they're in public folder)

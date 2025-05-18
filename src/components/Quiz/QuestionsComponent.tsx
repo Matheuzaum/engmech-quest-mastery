@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Check, X, Info } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface Question {
   question: React.ReactNode;
@@ -48,6 +50,11 @@ const QuestionsComponent = ({ questions }: QuestionsComponentProps) => {
     }
   };
 
+  // Helper to render content that might include images
+  const renderContent = (content: React.ReactNode) => {
+    return content;
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -59,7 +66,7 @@ const QuestionsComponent = ({ questions }: QuestionsComponentProps) => {
       <Card className="p-6">
         <div className="space-y-4">
           <div className="text-lg font-medium">
-            {currentQuestion.question}
+            {renderContent(currentQuestion.question)}
           </div>
 
           {hasEmptyOptions ? (
@@ -75,7 +82,7 @@ const QuestionsComponent = ({ questions }: QuestionsComponentProps) => {
                 <Alert className="bg-green-50 border-green-200">
                   <Info className="h-4 w-4 text-green-600" />
                   <AlertDescription className="text-green-800">
-                    {currentQuestion.explanation}
+                    {renderContent(currentQuestion.explanation)}
                   </AlertDescription>
                 </Alert>
               )}
@@ -102,7 +109,7 @@ const QuestionsComponent = ({ questions }: QuestionsComponentProps) => {
                     }`}
                   >
                     <span className="mr-2">{String.fromCharCode(65 + index)}.</span>
-                    {option}
+                    {renderContent(option)}
                     {showExplanation && (isSelected || isCorrect) && (
                       <span className="ml-2">
                         {isCorrect ? (
@@ -122,7 +129,7 @@ const QuestionsComponent = ({ questions }: QuestionsComponentProps) => {
             <Alert className="bg-green-50 border-green-200">
               <Info className="h-4 w-4 text-green-600" />
               <AlertDescription className="text-green-800">
-                {currentQuestion.explanation}
+                {renderContent(currentQuestion.explanation)}
               </AlertDescription>
             </Alert>
           )}
