@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import MainLayout from "@/components/Layout/MainLayout";
 import content from "@/data/content.json";
-import OptimizedImage from '../components/OptimizedImage';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const Index = () => {
   const scrollToComoFunciona = () => {

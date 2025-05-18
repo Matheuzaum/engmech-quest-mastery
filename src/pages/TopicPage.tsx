@@ -11,7 +11,7 @@ import { Home, Book, Check, AlertTriangle, ArrowRight, ArrowLeft } from "lucide-
 import QuestionsComponent from "@/components/Quiz/QuestionsComponent";
 import content from "@/data/content.json";
 import { Course, Discipline, Topic } from "@/types/course";
-import OptimizedImage from '../components/OptimizedImage';
+import OptimizedImage from '@/components/OptimizedImage';
 
 // Function to process text with <sub> and <sup> tags
 const processTextWithSubSup = (text: string) => {

@@ -7,7 +7,7 @@ import { ArrowRight, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Course } from "@/types/course";
 import content from "@/data/content.json";
-import OptimizedImage from '../components/OptimizedImage';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState<Course[]>([]);
