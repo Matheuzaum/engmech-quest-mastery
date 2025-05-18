@@ -7,6 +7,7 @@ import { ArrowRight, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Course } from "@/types/course";
 import content from "@/data/content.json";
+import OptimizedImage from '../components/OptimizedImage';
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -77,9 +78,11 @@ const CoursesPage = () => {
                   {filteredCourses.map((course) => (
                     <Card key={course.id} className="overflow-hidden card-hover">
                       <div className="aspect-video w-full overflow-hidden">
-                        <img
+                        <OptimizedImage
                           src={course.image}
                           alt={course.title}
+                          width={400}
+                          height={300}
                           className="w-full h-full object-cover"
                         />
                       </div>

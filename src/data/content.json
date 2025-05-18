@@ -5,7 +5,7 @@
       "title": "Mecânica dos Fluidos",
       "description": "Estudo do comportamento dos líquidos e gases em repouso e em movimento",
       "icon": "droplet",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "image": "/images/fluid-mechanics.jpg",
       "color": "engineer",
       "disciplines": [
         {
@@ -27,16 +27,16 @@
               ],
               "questions": [
                 {
-                  "question": "Qual é a unidade de medida da viscosidade <img>https://images.unsplash.com/photo-1518770660439-4636190af475</img>dinâmica?",
+                  "question": "Qual é a unidade de medida da viscosidade <img>/images/viscosity.jpg</img>dinâmica?",
                   "options": ["Pa·s", "kg/m³", "m/s", "N/m²"],
                   "correctAnswer": 0,
                   "explanation": "A viscosidade dinâmica é medida em Pascal-segundo (Pa·s) ou em poise (P)"
                 },
                 {
-                  "question": "Analise o diagrama de tensão-deformação abaixo e identifique o ponto de escoamento: <img>https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b</img>",
+                  "question": "Analise o diagrama de tensão-deformação abaixo e identifique o ponto de escoamento: <img>/images/stress-strain.jpg</img>",
                   "options": ["Ponto A", "Ponto B", "Ponto C", "Ponto D"],
                   "correctAnswer": 1,
-                  "explanation": "O ponto B representa o ponto de escoamento, onde o material começa a se deformar plasticamente sem aumento significativo da tensão. Veja a região destacada: <img>https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b</img>"
+                  "explanation": "O ponto B representa o ponto de escoamento, onde o material começa a se deformar plasticamente sem aumento significativo da tensão. Veja a região destacada: <img>/images/stress-strain-detail.jpg</img>"
                 },
                 {
                   "question": "O que acontece com a viscosidade de um líquido quando a temperatura aumenta?",
@@ -143,7 +143,7 @@
       "title": "Termodinâmica",
       "description": "Estudo da energia térmica, calor e trabalho, e suas conversões",
       "icon": "flame",
-      "image": "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b",
+      "image": "/images/thermodynamics.jpg",
       "color": "mechanic",
       "disciplines": [
         {
@@ -285,7 +285,7 @@
       "title": "Resistência dos Materiais",
       "description": "Análise do comportamento de sólidos submetidos a cargas",
       "icon": "settings",
-      "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      "image": "/images/materials-strength.jpg",
       "color": "engineer",
       "disciplines": [
         {
@@ -736,7 +736,7 @@
                   "explanation": "Chavetas: Função: Fixar elementos a eixos para transmitir torque ou prender axialmente. Características: Elementos prismáticos inseridos em rasgos no eixo e no cubo. Exemplo: Flanges de árvores de natal molhada (equipamento submarino) para suportar esforços torcionais. [cite: 34, 46, 47, 48] Estrias: Função: Transmitir torque, similar às chavetas, mas com maior capacidade. Características: Múltiplas chavetas formadas integralmente no eixo e no cubo. Vantagens: Carregamento individual menor por estria, melhor vida em fadiga. Exemplo: Caixa de transmissão de automóveis, juntas homocinéticas. [cite: 34, 49, 50, 51]"
                 },
                 {
-                  "question": "Questão 4: Seja o eixo mostrado na figura a seguir com com cargas aplicadas, P2 = 1000 lbf e P1 é 40% de P2. Seja a = 16in, b = 18in e L = 20 in. Selecione o mancal de esferas apropriado da tabela adjunta para suportar as cargas P1 e P2 para pelo menos LD = 500 milhões de ciclos a 1200 rpm na posição mais exigida do eixo e considerando 10% de taxa de falha e KR = 1. Calcule vida L10.<img>/src/data/img/img_q4_eixos.png</img>(Prova I - 16/03/2021)",
+                  "question": "Questão 4: Seja o eixo mostrado na figura a seguir com com cargas aplicadas, P2 = 1000 lbf e P1 é 40% de P2. Seja a = 16in, b = 18in e L = 20 in. Selecione o mancal de esferas apropriado da tabela adjunta para suportar as cargas P1 e P2 para pelo menos LD = 500 milhões de ciclos a 1200 rpm na posição mais exigida do eixo e considerando 10% de taxa de falha e KR = 1. Calcule vida L10.<img>/images/eixos-q4.png</img>(Prova I - 16/03/2021)",
                   "explanation": "Reação mais exigida (R2) = 1466,04 lbf. Capacidade de carga dinâmica requerida (C) = 11630,47 lbf. Mancal selecionado da tabela: #6311 (com C = 12900 lb). Vida L10 calculada para o mancal #6311 sob carga R2: 680,4 milhões de revoluções. [cite: 72, 73]"
                 },
                 {
@@ -766,11 +766,11 @@
                   "explanation": "Vantagens das engrenagens retas sobre as helicoidais: 1. Menor custo de fabricação (são mais simples de projetar e fabricar). 2. Não geram cargas axiais (de empuxo). Vantagens das engrenagens helicoidais sobre as retas: 1. Operação mais suave e silenciosa (devido ao engrenamento gradual dos dentes). 2. Maior capacidade de transmissão de carga (para o mesmo tamanho, devido ao contato mais distribuído). [cite: 7, 25, 26, 27]"
                 },
                 {
-                  "question": "Questão 4: Apresente as principais vantagens das engrenagens retas sobre as helicoidais e logo das engrenagens as helicoidais sobre as retas, indique na figura a seguir os principais parâmetros que definem geometria de uma engrenagem.<img>/src/data/img/img_q4_engrenagens.png</img>(Prova Final - 24/11/2020)",
+                  "question": "Questão 4: Apresente as principais vantagens das engrenagens retas sobre as helicoidais e logo das engrenagens as helicoidais sobre as retas, indique na figura a seguir os principais parâmetros que definem geometria de uma engrenagem.<img>/images/engrenagens-q4.png</img>(Prova Final - 24/11/2020)",
                   "explanation": "Vantagens das engrenagens retas sobre helicoidais: Mais simples e baratas de fabricar; não produzem empuxo axial. [cite: 14, 25, 26] Vantagens das engrenagens helicoidais sobre retas: Operação mais suave e silenciosa; maior capacidade de carga e contato entre dentes. [cite: 14, 26, 27] Parâmetros geométricos de uma engrenagem (indicados na figura): A: Dedendo, B: Largura do vão, C: Passo circular de referência, D: Espessura do dente, E: Adendo. [cite: 14, 28]"
                 },
                 {
-                  "question": "Questão 3: No trem de engrenagens da figura, a engrenagem 6 gira a 85 RPM no sentido anti-horário enquanto a engrenagem 2 é mantida fixa. Calcule a velocidade e sentido de giro do braço 3 desse engrenagem planetário.<img>/src/data/img/img_q3_engrenagens.png</img>(Proficiência - 04/05/2021)",
+                  "question": "Questão 3: No trem de engrenagens da figura, a engrenagem 6 gira a 85 RPM no sentido anti-horário enquanto a engrenagem 2 é mantida fixa. Calcule a velocidade e sentido de giro do braço 3 desse engrenagem planetária.<img>/images/engrenagens-q3.png</img>(Proficiência - 04/05/2021)",
                   "explanation": "NA"
                 },
                 {
@@ -898,9 +898,9 @@
     {
       "id": "admin-economics",
       "title": "Administração e Economia",
+      "description": "Estudo de conceitos e práticas de administração, finanças e economia aplicados à engenharia",
       "icon": "briefcase",
-      "description": "Estudo de conceitos e práticas de administração, finanças e economia aplicados à engenharia.",
-      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      "image": "/images/admin-economics.jpg",
       "color": "business",
       "disciplines": [
         {

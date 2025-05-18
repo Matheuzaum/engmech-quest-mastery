@@ -11,6 +11,7 @@ import { Home, Book, Check, AlertTriangle, ArrowRight, ArrowLeft } from "lucide-
 import QuestionsComponent from "@/components/Quiz/QuestionsComponent";
 import content from "@/data/content.json";
 import { Course, Discipline, Topic } from "@/types/course";
+import OptimizedImage from '../components/OptimizedImage';
 
 // Function to process text with <sub> and <sup> tags
 const processTextWithSubSup = (text: string) => {
@@ -62,6 +63,42 @@ const processTextWithLineBreaksAndSubSup = (text: string) => {
   });
 };
 
+const renderContent = (text) => {
+  if (!text) return '';
+  
+  const parts = text.split(/(\n|<sub>|<\/sub>|<sup>|<\/sup>|<img>.*?<\/img>)/g);
+  
+  return parts.map((part, index) => {
+    if (part === '\n') {
+      return <br key={index} />;
+    }
+    
+    if (part.startsWith('<sub>')) {
+      return <sub key={index}>{part.replace(/<\/?sub>/g, '')}</sub>;
+    }
+    
+    if (part.startsWith('<sup>')) {
+      return <sup key={index}>{part.replace(/<\/?sup>/g, '')}</sup>;
+    }
+    
+    const imgMatch = part.match(/<img>(.*?)<\/img>/);
+    if (imgMatch) {
+      return (
+        <OptimizedImage
+          key={index}
+          src={imgMatch[1]}
+          alt="Question image"
+          width={800}
+          height={600}
+          className="my-4 rounded-lg"
+        />
+      );
+    }
+    
+    return part;
+  });
+};
+
 const TopicPage = () => {
   const { courseId, disciplineId, topicId } = useParams<{ courseId: string; disciplineId: string; topicId?: string }>();
   const [course, setCourse] = useState<Course | null>(null);
@@ -74,10 +111,10 @@ const TopicPage = () => {
 
   const processQuestions = (questions: any) => {
     return questions.map((question: any) => ({
-      question: processTextWithLineBreaksAndSubSup(question.question),
+      question: renderContent(question.question),
       image: question.image,
-      options: question.options?.map((option: any) => processTextWithLineBreaksAndSubSup(option)),
-      explanation: processTextWithLineBreaksAndSubSup(question.explanation),
+      options: question.options?.map((option: any) => renderContent(option)),
+      explanation: renderContent(question.explanation),
       correctAnswer: question.correctAnswer,
     }));
   };
@@ -239,7 +276,7 @@ const TopicPage = () => {
               <div className="bg-card rounded-lg p-6 border shadow-sm">
                 <h3 className="text-xl font-bold mb-4">Resumo</h3>
                 <p className="mb-6 text-foreground/90">
-                  {processTextWithLineBreaksAndSubSup(topic.summary)}
+                  {renderContent(topic.summary)}
                 </p>
               </div>
             </div>
@@ -259,7 +296,7 @@ const TopicPage = () => {
                           <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white text-xs font-medium shrink-0 mt-0.5">
                             {index + 1}
                           </span>
-                          <span>{processTextWithLineBreaksAndSubSup(tip)}</span>
+                          <span>{renderContent(tip)}</span>
                         </li>
                       ))}
                     </ul>
@@ -278,7 +315,7 @@ const TopicPage = () => {
                           <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-destructive/80 text-white text-xs font-medium shrink-0 mt-0.5">
                             {index + 1}
                           </span>
-                          <span>{processTextWithLineBreaksAndSubSup(warning)}</span>
+                          <span>{renderContent(warning)}</span>
                         </li>
                       ))}
                     </ul>

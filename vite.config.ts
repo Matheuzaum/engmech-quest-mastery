@@ -19,4 +19,23 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Configuração para servir arquivos estáticos
+  publicDir: 'public',
+  build: {
+    // Configuração para otimização de imagens
+    assetsInlineLimit: 4096, // 4kb
+    rollupOptions: {
+      output: {
+        // Configuração para nomes de arquivos
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(png|jpe?g|gif|webp|svg)$/.test(assetInfo.name)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+      },
+    },
+  },
 }));

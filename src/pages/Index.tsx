@@ -1,8 +1,10 @@
+import React from 'react';
 import { ArrowRight, Book } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import MainLayout from "@/components/Layout/MainLayout";
 import content from "@/data/content.json";
+import OptimizedImage from '../components/OptimizedImage';
 
 const Index = () => {
   const scrollToComoFunciona = () => {
@@ -108,14 +110,14 @@ const Index = () => {
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {content.courses.map((course) => (
-              <Link key={course.id} to={`/courses/${course.id}`} className="group card-hover overflow-hidden rounded-lg border bg-card">
-                <div className="aspect-video w-full overflow-hidden">
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className="object-cover w-full h-full transition-all group-hover:scale-105"
-                  />
-                </div>
+              <div key={course.id} className="course-card">
+                <OptimizedImage
+                  src={course.image}
+                  alt={course.title}
+                  width={400}
+                  height={300}
+                  className="course-image"
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary">{course.title}</h3>
                   <p className="mt-2 text-muted-foreground">
@@ -128,7 +130,7 @@ const Index = () => {
                     <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
 
